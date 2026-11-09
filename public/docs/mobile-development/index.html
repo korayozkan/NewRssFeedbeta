@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mobil Uygulama Teknoloji Rehberi | NewRssFeed</title>
+    <meta name="description" content="NewRssFeed mobil uygulama planı için Expo, React Navigation, Supabase, Lucide React Native ve güvenli Row Level Security (RLS) rehberi." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://korayozkan.github.io/NewRssFeedbeta/docs/mobile-development/" />
+    <link rel="icon" type="image/png" href="../../favicon-32.png" />
+    <link rel="stylesheet" href="../guide.css" />
+    <style>
+      pre{overflow:auto;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.warning{padding:16px 18px;border-left:3px solid #e5a638;border-radius:10px;background:var(--soft);color:var(--text)}
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">İçeriğe geç</a>
+    <header class="topbar"><div class="topbar-inner"><a class="brand" href="../../"><img src="../../image.png" alt="" width="36" height="36" /><span>NewRssFeed</span></a><a class="top-link" href="../">Dokümantasyon</a></div></header>
+    <main id="main">
+      <nav class="crumbs" aria-label="İçerik yolu"><a href="../">Dokümantasyon</a> / Mobil geliştirme</nav>
+      <span class="eyebrow">Teknik rehber · Planlanan mobil yığın</span>
+      <h1>Expo, Supabase, Lucide ve RLS</h1>
+      <p class="intro">Bu rehber, NewRssFeed için olası bir iOS ve Android uygulama yapısını ve güvenli veri erişim ilkelerini açıklar.</p>
+      <p class="warning"><strong>Mevcut durum:</strong> Bu depoda çalışan web tanıtım sitesi Vite ve TypeScript kullanıyor. Expo, React Navigation ve Supabase henüz projeye entegre edilmedi. Web sitesindeki Lucide ikonları CDN üzerinden yükleniyor; React Native paketi kullanılmıyor. Aşağıdaki kodlar planlama örneğidir, çalışan ürün özelliği veya uygulanmış veritabanı politikası değildir.</p>
+
+      <div class="content">
+        <h2>Önerilen sorumluluklar</h2>
+        <ul>
+          <li><strong>Expo + React Native:</strong> iOS ve Android istemcisini geliştirmek ve derlemek için.</li>
+          <li><strong>React Navigation:</strong> ekranlar, tab ve stack geçişleri için. Expo yeni projelerde Expo Router’ı öneriyor; React Navigation da geçerli bir seçenektir. Projede iki yönlendiriciyi birlikte kullanmak yerine biri seçilmelidir.</li>
+          <li><strong>Supabase:</strong> PostgreSQL veritabanı, kullanıcı oturumu ve ihtiyaç olursa dosya depolama veya gerçek zamanlı güncellemeler için.</li>
+          <li><strong>Lucide React Native:</strong> mobil arayüzde tutarlı SVG ikonları için.</li>
+        </ul>
+
+        <h2>Expo ile Supabase istemcisi</h2>
+        <p>Expo’nun güncel Supabase kılavuzu <code>@supabase/supabase-js</code> ile <code>expo-sqlite</code> kullanarak yerel oturum saklamayı gösteriyor. Anahtarları uygulama ortam değişkenlerine koy; mobil pakete eklenen değerlerin gizli olmadığını varsay.</p>
+        <pre><code>npx expo install @supabase/supabase-js expo-sqlite</code></pre>
+        <pre><code>import 'expo-sqlite/localStorage/install';
+import { createClient } from '@supabase/supabase-js';
+
+export const supabase = createClient(
+  process.env.EXPO_PUBLIC_SUPABASE_URL!,
+  process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
+  {
+    auth: {
+      storage: localStorage,
+      autoRefreshToken: true,
+      persistSession: true,
+      detectSessionInUrl: false,
+    },
+  },
+);</code></pre>
+        <p><code>EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY</code> istemci uygulamasında kullanılabilir; erişim sınırını RLS ve veritabanı izinleri belirler. <code>service_role</code> veya secret key’i uygulamaya, depoya ya da istemciye gönderilen ortamlara koyma.</p>
+
+        <h2>React Navigation ve Expo Router</h2>
+        <p>React Native’in çekirdeği bir yönlendirme sistemi içermez. React Navigation stack, tab ve drawer yapılarıyla kod üzerinden esnek ekran akışları kurar. Expo Router ise dosya tabanlı yönlendirme, derin bağlantı ve Expo araçlarıyla bütünleşme sağlar; Expo yeni projeler için bunu öneriyor. Karar verirken oturum açma akışı, derin bağlantılar ve web desteğini birlikte değerlendir.</p>
+        <p>Kimlik doğrulaması yalnızca ekranda hangi sayfaların gösterileceğini belirlemeli. Veriye kimin erişebileceğini yine Supabase RLS politikaları denetlemelidir; gizli ekran tek başına erişim kontrolü değildir.</p>
+
+        <h2>Lucide ikonları</h2>
+        <p>Web tanıtım sitesi şu anda Lucide’ın tarayıcı paketini kullanıyor. Expo/React Native tarafında Lucide’ın resmi paketi <code>lucide-react-native</code>’dir:</p>
+        <pre><code>import { Bell } from 'lucide-react-native';
+
+&lt;Bell size={20} color="#6848e8" accessible accessibilityLabel="Bildirimler" /&gt;</code></pre>
+        <p>Yalnızca kullanılan ikonları içe aktar ve etkileşimli ikonlara erişilebilir ad ver. Paket ve Expo uyumluluğu kuruluma başlamadan önce resmi Lucide ve Expo belgelerinden kontrol edilmelidir.</p>
+
+        <h2>Supabase Row Level Security (RLS)</h2>
+        <p>RLS, veritabanında hangi satırların okunup değiştirilebileceğini tanımlar. İstemci filtresine güvenmek yerine erişim kuralını tabloda uygula. Açık bir şemadaki tablolar için önce RLS’yi etkinleştir, gerekli SQL izinlerini ver ve her işlem için ayrı politika tanımla.</p>
+        <p>Aşağıdaki örnek, <code>public.feed_items</code> tablosunda UUID türünde <code>owner_id</code> alanı bulunduğunu varsayar. Bunu olduğu gibi çalıştırma; gerçek tablo ve paylaşım modeline göre uyarlayıp migration ve testlerle doğrula.</p>
+        <pre><code>alter table public.feed_items enable row level security;
+
+grant select, insert, update
+on table public.feed_items
+to authenticated;
+
+create policy "Users read their own feed items"
+on public.feed_items
+for select
+to authenticated
+using ((select auth.uid()) = owner_id);
+
+create policy "Users add their own feed items"
+on public.feed_items
+for insert
+to authenticated
+with check ((select auth.uid()) = owner_id);
+
+create policy "Users update their own feed items"
+on public.feed_items
+for update
+to authenticated
+using ((select auth.uid()) = owner_id)
+with check ((select auth.uid()) = owner_id);
+
+create index if not exists feed_items_owner_id_idx
+on public.feed_items (owner_id);</code></pre>
+        <ul>
+          <li><code>to authenticated</code> rolü sınırlar; <code>auth.uid()</code> ise satırın mevcut kullanıcıya ait olduğunu kontrol eder. Sadece giriş yapmış olmak, satır sahipliğini kanıtlamaz.</li>
+          <li>INSERT için <code>with check</code> yeni satırın sahibini doğrular. UPDATE hem eski satırı <code>using</code> ile hem yeni satırı <code>with check</code> ile sınırlar.</li>
+          <li>UPDATE yapabilmek için uygun SELECT izni ve SELECT politikası da gerekir. İzinler RLS’den ayrı değerlendirilir.</li>
+          <li>Ortak akışlarda sahiplik tek başına yeterli değildir; üyelik ve paylaşım kuralları ayrıca tasarlanmalıdır. Karşılıklı tablo politikaları sonsuz özyineleme oluşturabilir.</li>
+          <li>RLS politikalarını anonim, sahip kullanıcı, başka bir kullanıcı ve beklenen paylaşım rolleri için veritabanı testleriyle doğrula. Erişim filtresi olan sütunlara uygun indeks ekle.</li>
+        </ul>
+
+        <h2>Kaynaklar</h2>
+        <ul>
+          <li><a href="https://docs.expo.dev/guides/using-supabase/">Expo: Supabase kullanımı</a></li>
+          <li><a href="https://docs.expo.dev/develop/app-navigation/">Expo: uygulama gezinmesi</a> · <a href="https://reactnavigation.org/docs/getting-started">React Navigation başlangıç</a></li>
+          <li><a href="https://lucide.dev/guide/react-native/">Lucide React Native</a></li>
+          <li><a href="https://supabase.com/docs/guides/database/postgres/row-level-security">Supabase: Row Level Security</a></li>
+          <li><a href="https://supabase.com/docs/guides/api/securing-your-api">Supabase: API güvenliği, grants ve RLS</a></li>
+        </ul>
+      </div>
+      <nav class="cards" aria-label="İlgili dokümanlar"><a class="card" href="../contributing/"><strong>Katkı rehberi</strong>Projeye katkı gönder</a><a class="card" href="../security/"><strong>Güvenlik</strong>Güvenlik bildirim süreci</a><a class="card" href="../faq/"><strong>SSS</strong>Mevcut proje durumunu öğren</a></nav>
+    </main>
+    <footer>© 2026 NewRssFeed · <a href="../../">Ana sayfa</a> · <a href="../">Dokümantasyon</a></footer>
+  </body>
+</html>
