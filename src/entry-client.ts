@@ -6,10 +6,9 @@ if (savedLang === 'en') {
   setLang('en')
 }
 
-// If the page was server-rendered (SSR), the HTML is already in #app.
-// If not (dev mode with no SSR), render it now.
+// Render app on client side
 const appEl = document.getElementById('app')
-if (appEl && appEl.innerHTML.trim() === '') {
+if (appEl) {
   const { html } = render()
   appEl.innerHTML = html
 }
