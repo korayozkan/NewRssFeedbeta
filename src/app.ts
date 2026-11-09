@@ -1,4 +1,4 @@
-// NewRssFeed — Main App Entry (11-Step Structured Landing Page)
+// NewRssFeed — Main App Entry (11-Step Structured Landing Page with Rich Visuals & Interactive Preview)
 // Brand Palette: Majorelle Blue (#6d4aff), Medium Slate Blue (#8b72ff), Lavender (#eee9ff), White Smoke (#f5f4f7), Shadow Grey (#17151c)
 
 type Lang = 'tr' | 'en'
@@ -68,8 +68,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'how.s3Title': '3. Tek Akışta Takip Et',
     'how.s3Desc': 'İçeriklerinizi gürültüsüz, temiz ve kronolojik olarak okuyun.',
 
-    'showcase.heading': 'Ürün Tanıtımı',
-    'showcase.subtext': 'Modern, hızlı ve göz yormayan arayüzümüzü keşfedin.',
+    'showcase.heading': 'Canlı Ürün Önizlemesi',
+    'showcase.subtext': 'NewRssFeed arayüzünü ve çoklu platform akış deneyimini hemen test edin.',
 
     'pricing.heading': 'Şeffaf Fiyatlandırma',
     'pricing.subtext': 'Kapalı beta sürecinde tamamen ücretsiz.',
@@ -117,7 +117,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'form.submit': 'Başvuruyu e-posta ile Gönder',
     'form.sending': 'E-posta Hazırlanıyor...',
     'form.privacySafe': 'Bilgilerin güvende.',
-    'form.privacyLink': 'Gizlilik Politikamız',
+    'form.privacyLink': 'Gizlilik Politikası',
     'form.privacyDetails': 'gizlidir.',
     'form.successTitle': 'Başvurun Alındı!',
     'form.successText': 'Beta başvuru bilgileriniz kiruhiofficial@proton.me adresine iletilmek üzere hazırlandı.',
@@ -182,8 +182,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'how.s3Title': '3. Follow in a Single Feed',
     'how.s3Desc': 'Read your content clean, noise-free, and chronologically.',
 
-    'showcase.heading': 'Product Showcase',
-    'showcase.subtext': 'Explore our modern, fast, and eye-friendly interface.',
+    'showcase.heading': 'Live Product Preview',
+    'showcase.subtext': 'Test drive the NewRssFeed interface and multi-platform streaming experience right now.',
 
     'pricing.heading': 'Transparent Pricing',
     'pricing.subtext': 'Completely free during the closed beta period.',
@@ -604,30 +604,154 @@ function HowItWorksSection(): string {
   `
 }
 
-// ─── 07. Ürün Tanıtımı (Product Showcase) ──────────────────────────────────────
+// ─── 07. Ürün Tanıtımı (Product Showcase with Interactive Live Preview) ───────
 function ProductShowcaseSection(): string {
   return /* html */ `
-    <section class="py-20 px-6 bg-white dark:bg-[#17151c] transition-colors overflow-hidden">
+    <section class="py-20 px-6 bg-white dark:bg-[#17151c] transition-colors overflow-hidden" id="showcase">
       <div class="max-w-7xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <h2 class="text-3xl lg:text-4xl font-extrabold text-[#17151c] dark:text-white mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-[#6d4aff] bg-[#eee9ff] dark:bg-[#6d4aff]/20 px-3 py-1.5 rounded-full">
+            İnteraktif Önizleme
+          </span>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-[#17151c] dark:text-white mt-4 mb-3">
             ${t('showcase.heading')}
           </h2>
           <p class="text-gray-600 dark:text-gray-300 text-lg">${t('showcase.subtext')}</p>
         </div>
 
-        <div class="flex justify-center">
-          <div class="relative rounded-[2.8rem] overflow-hidden
-                      shadow-2xl shadow-[#6d4aff]/20
-                      border-[5px] border-gray-800 dark:border-gray-700
-                      bg-gray-900
-                      w-[260px] sm:w-[300px]">
-            <img
-              src="${basePath('app-preview.png')}"
-              alt="NewRssFeed Uygulama Ekranı - Mobil Arayüz Önizlemesi"
-              width="300" height="650"
-              loading="lazy" decoding="async"
-              class="w-full h-auto block" />
+        <!-- Interactive Dashboard Mockup Frame -->
+        <div class="max-w-4xl mx-auto rounded-3xl bg-[#f5f4f7] dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden">
+          <!-- Top bar -->
+          <div class="px-6 py-4 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <div class="w-3 h-3 rounded-full bg-red-400"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400"></div>
+              <span class="ml-4 text-xs font-mono text-gray-500 dark:text-gray-400">app.newrssfeed.com/dashboard</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span class="text-xs font-medium text-gray-600 dark:text-gray-300">Canlı Akış (Live Stream)</span>
+            </div>
+          </div>
+
+          <!-- Dashboard Toolbar / Platform Filters -->
+          <div class="p-6 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 flex items-center gap-3 overflow-x-auto">
+            <button class="feed-filter px-4 py-2 rounded-xl text-xs font-bold bg-[#6d4aff] text-white cursor-pointer transition" data-filter="all">Tümü (All)</button>
+            <button class="feed-filter px-4 py-2 rounded-xl text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition" data-filter="youtube">YouTube</button>
+            <button class="feed-filter px-4 py-2 rounded-xl text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition" data-filter="reddit">Reddit</button>
+            <button class="feed-filter px-4 py-2 rounded-xl text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition" data-filter="github">GitHub</button>
+            <button class="feed-filter px-4 py-2 rounded-xl text-xs font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer transition" data-filter="x">X (Twitter)</button>
+          </div>
+
+          <!-- Feed Items Stream -->
+          <div id="dashboard-feed-stream" class="p-6 space-y-4 max-h-[500px] overflow-y-auto bg-gray-50 dark:bg-[#17151c]/50">
+            <!-- Feed Item 1 -->
+            <article class="feed-item p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row gap-4 items-start" data-platform="youtube">
+              <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0">
+                ${si(SI.youtube, 'w-5 h-5 text-red-500')}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold text-red-600 dark:text-red-400">YouTube</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-500">Tech Channel</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-400">2 saat önce</span>
+                </div>
+                <h4 class="font-bold text-[#17151c] dark:text-white text-base mb-2 hover:text-[#6d4aff] cursor-pointer">
+                  Building a Full-Stack RSS Aggregator with TypeScript & Vite (2026 Edition)
+                </h4>
+                <p class="text-xs text-gray-600 dark:text-gray-300 line-clamp-2">
+                  In this video, we explore how modern RSS readers aggregate decentralized web feeds without invasive algorithms or ads...
+                </p>
+              </div>
+            </article>
+
+            <!-- Feed Item 2 -->
+            <article class="feed-item p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row gap-4 items-start" data-platform="reddit">
+              <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center flex-shrink-0">
+                ${si(SI.reddit, 'w-5 h-5 text-orange-500')}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold text-orange-600 dark:text-orange-400">Reddit</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-500">r/webdev</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-400">4 saat önce</span>
+                </div>
+                <h4 class="font-bold text-[#17151c] dark:text-white text-base mb-2 hover:text-[#6d4aff] cursor-pointer">
+                  Why unifying social feeds into RSS is making a massive comeback in 2026
+                </h4>
+                <p class="text-xs text-gray-600 dark:text-gray-300 line-clamp-2">
+                  People are tired of algorithm-driven feeds hiding important discussions. RSS is returning as the ultimate tool for sovereign reading...
+                </p>
+              </div>
+            </article>
+
+            <!-- Feed Item 3 -->
+            <article class="feed-item p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row gap-4 items-start" data-platform="github">
+              <div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                ${si(SI.github, 'w-5 h-5 text-gray-800 dark:text-gray-200')}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold text-gray-700 dark:text-gray-300">GitHub</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-500">korayozkan/NewRssFeedbeta</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-400">6 saat önce</span>
+                </div>
+                <h4 class="font-bold text-[#17151c] dark:text-white text-base mb-2 hover:text-[#6d4aff] cursor-pointer">
+                  Release v0.9.4-beta: Enhanced Laws of UX showcase and lightning-fast static SSG rendering
+                </h4>
+                <p class="text-xs text-gray-600 dark:text-gray-300 line-clamp-2">
+                  New release includes zero-dependency client hydration, improved accessibility contrast scores, and full GitHub Pages support...
+                </p>
+              </div>
+            </article>
+
+            <!-- Feed Item 4 -->
+            <article class="feed-item p-5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col sm:flex-row gap-4 items-start" data-platform="x">
+              <div class="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                ${si(SI.x, 'w-4 h-4 text-gray-800 dark:text-gray-200')}
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-1">
+                  <span class="text-xs font-bold text-gray-700 dark:text-gray-300">X (Twitter)</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-500">@kiruhiofficial</span>
+                  <span class="text-xs text-gray-400">•</span>
+                  <span class="text-xs text-gray-400">8 saat önce</span>
+                </div>
+                <h4 class="font-bold text-[#17151c] dark:text-white text-base mb-2 hover:text-[#6d4aff] cursor-pointer">
+                  Excited to announce the 2026 Closed Beta release of NewRssFeed! All your favorite feeds in one place.
+                </h4>
+                <p class="text-xs text-gray-600 dark:text-gray-300 line-clamp-2">
+                  No ads, no algorithmic timeline manipulation. Just your content, your way. Apply for beta now!
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Mobile Preview Screenshot Showcase -->
+        <div class="mt-16 text-center">
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-6">Mobil Cihaz Uyumluluğu</p>
+          <div class="flex justify-center">
+            <div class="relative rounded-[2.8rem] overflow-hidden
+                        shadow-2xl shadow-[#6d4aff]/20
+                        border-[5px] border-gray-800 dark:border-gray-700
+                        bg-gray-900
+                        w-[240px] sm:w-[270px]">
+              <img
+                src="${basePath('app-preview.png')}"
+                alt="NewRssFeed Mobil Arayüz Önizlemesi"
+                width="270" height="585"
+                loading="lazy" decoding="async"
+                class="w-full h-auto block" />
+            </div>
           </div>
         </div>
       </div>
@@ -1130,7 +1254,6 @@ export function initApp() {
     (window as any).lucide.createIcons()
   }
 
-  // ── Update SEO metadata ──
   document.title = t('seo.title')
   const metaDesc = document.querySelector('meta[name="description"]')
   if (metaDesc) metaDesc.setAttribute('content', t('seo.desc'))
@@ -1139,7 +1262,6 @@ export function initApp() {
   const ogDesc = document.querySelector('meta[property="og:description"]')
   if (ogDesc) ogDesc.setAttribute('content', t('seo.desc'))
 
-  // ── Dark / Light mode ──
   const html = document.documentElement
   const sunIcon  = document.getElementById('theme-icon-sun')
   const moonIcon = document.getElementById('theme-icon-moon')
@@ -1166,7 +1288,6 @@ export function initApp() {
     }
   })
 
-  // ── Language toggle ──
   document.getElementById('lang-toggle')?.addEventListener('click', () => {
     const newLang: Lang = currentLang === 'tr' ? 'en' : 'tr'
 
@@ -1199,7 +1320,6 @@ export function initApp() {
     initApp()
   })
 
-  // ── Scroll CTAs to beta form ──
   ;['nav-cta', 'hero-cta'].forEach(id => {
     document.getElementById(id)?.addEventListener('click', () => {
       const formEl = document.getElementById('beta-form')
@@ -1219,17 +1339,36 @@ export function initApp() {
     })
   })
 
-  // ── Sign-in handler (alert) ──
   document.getElementById('signin-btn')?.addEventListener('click', () => {
     alert(currentLang === 'tr' ? 'Kapalı beta sürecindeyiz. Lütfen Ücretsiz Başla butonu ile beta başvurusu yapın.' : 'We are in closed beta. Please apply for beta using the Start Free button.')
   })
 
-  // ── Platform chip toggle ──
   document.querySelectorAll('.platform-chip').forEach(chip => {
     chip.addEventListener('click', () => chip.classList.toggle('active-chip'))
   })
 
-  // ── Beta form submission ──
+  // ── Dashboard Feed Filter Interactivity ──
+  document.querySelectorAll('.feed-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.feed-filter').forEach(b => {
+        b.classList.remove('bg-[#6d4aff]', 'text-white')
+        b.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300')
+      })
+      btn.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-700', 'dark:text-gray-300')
+      btn.classList.add('bg-[#6d4aff]', 'text-white')
+
+      const filter = (btn as HTMLElement).dataset.filter
+      document.querySelectorAll('.feed-item').forEach(item => {
+        const platform = (item as HTMLElement).dataset.platform
+        if (filter === 'all' || platform === filter) {
+          (item as HTMLElement).style.display = 'flex'
+        } else {
+          (item as HTMLElement).style.display = 'none'
+        }
+      })
+    })
+  })
+
   const form = document.getElementById('betaFormEl') as HTMLFormElement | null
   if (form) {
     form.addEventListener('submit', (e: Event) => {
@@ -1291,7 +1430,6 @@ export function initApp() {
     })
   }
 
-  // ── Laws of UX Modal ──
   const lawModal = document.getElementById('law-modal')
   const lawModalContent = document.getElementById('law-modal-content')
   const modalBody = document.getElementById('modal-body')
@@ -1355,7 +1493,6 @@ export function initApp() {
     if (e.key === 'Escape') closeLawModal()
   })
 
-  // ── Sticky nav shadow ──
   const nav = document.querySelector('nav')
   if (nav) {
     if (navScrollHandler) {
