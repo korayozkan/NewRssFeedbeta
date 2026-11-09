@@ -633,23 +633,23 @@ function SeoHead(): string {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'NewRssFeed',
-    url: 'https://newrssfeed.com',
-    logo: 'https://newrssfeed.com/favicon.svg',
+    url: 'https://korayozkan.github.io/NewRssFeedbeta/',
+    logo: 'https://korayozkan.github.io/NewRssFeedbeta/favicon.svg',
     email: 'kiruhiofficial@proton.me',
     description: 'Sosyal medya içeriklerini tek bir akışta birleştiren platform.',
-    sameAs: ['https://github.com/korayozkan/NewRssFeed']
+    sameAs: ['https://github.com/korayozkan/NewRssFeedbeta']
   }
 
   const site = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'NewRssFeed',
-    url: 'https://newrssfeed.com',
+    url: 'https://korayozkan.github.io/NewRssFeedbeta/',
     inLanguage: 'tr-TR',
     description: 'Sosyal medya içeriklerini tek bir akışta birleştir. YouTube, Reddit, GitHub, X ve Medium.',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://newrssfeed.com/?q={search_term_string}',
+      target: 'https://korayozkan.github.io/NewRssFeedbeta/?q={search_term_string}',
       'query-input': 'required name=search_term_string'
     }
   }
@@ -660,7 +660,7 @@ function SeoHead(): string {
     name: 'NewRssFeed',
     applicationCategory: 'SocialNetworkingApplication',
     operatingSystem: 'Web',
-    url: 'https://newrssfeed.com',
+    url: 'https://korayozkan.github.io/NewRssFeedbeta/',
     description: 'Sosyal medya içeriklerini tek bir akışta birleştiren uygulama.',
     inLanguage: 'tr-TR',
     offers: {
