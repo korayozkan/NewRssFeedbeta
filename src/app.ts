@@ -54,6 +54,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'features.f3Desc': 'Gürültüyü filtrele, önemli içeriklere odaklan.',
     'features.f4Title': 'Kontrol Senin Elinde',
     'features.f4Desc': 'Algoritmaya değil kendi tercihlerine güven.',
+    'features.heading': 'Sosyal Medya Akışınızı Kolayca Yönetin',
+    'features.subtext': 'Tüm platformları tek bir ekranda birleştirerek zamandan tasarruf edin.',
     'why.heading': 'Neden NewRssFeed?',
     'why.subtext': 'Dağınık sosyal medya akışlarından sıkıldıysan doğru yerdesin.',
     'why.r1Title': 'RSS akışlarını tek yerde topla',

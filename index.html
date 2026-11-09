@@ -10,42 +10,52 @@
     <meta name="description" content="NewRssFeed ile YouTube, Reddit, GitHub, X ve Medium içeriklerini 2026'da tek bir akışta birleştirin. Daha düzenli, reklamsız ve özgür bir sosyal medya okuma deneyimi." />
     <meta name="keywords" content="sosyal medya akışı, RSS okuyucu 2026, içerik toplayıcı, sosyal medya yöneticisi, feed aggregator, NewRssFeed, kapalı beta, YouTube Reddit GitHub X Medium birleştir" />
     <meta name="author" content="NewRssFeed" />
-    <meta name="publisher" content="NewRssFeed" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <meta name="google-site-verification" content="QnL9HVmtGLAgD1XJF5JwVzzmCLHHSD_820AroLcT0TQ" />
     <link rel="canonical" href="https://korayozkan.github.io/NewRssFeedbeta/" />
 
-    <!-- Open Graph (Social Sharing) -->
+    <!-- Çoklu Dil ve Hreflang Alternatifleri -->
+    <link rel="alternate" hreflang="tr" href="https://korayozkan.github.io/NewRssFeedbeta/" />
+    <link rel="alternate" hreflang="en" href="https://korayozkan.github.io/NewRssFeedbeta/" />
+    <link rel="alternate" hreflang="x-default" href="https://korayozkan.github.io/NewRssFeedbeta/" />
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NewRssFeed" />
     <meta property="og:title" content="NewRssFeed: Sosyal Medya İçeriklerini Tek Akışta Birleştir" />
     <meta property="og:description" content="YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta birleştirin. Dağınıklığa son verin." />
     <meta property="og:url" content="https://korayozkan.github.io/NewRssFeedbeta/" />
     <meta property="og:image" content="https://korayozkan.github.io/NewRssFeedbeta/hero.png" />
+    <meta property="og:image:secure_url" content="https://korayozkan.github.io/NewRssFeedbeta/hero.png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="NewRssFeed sosyal medya akış toplayıcısı" />
     <meta property="og:locale" content="tr_TR" />
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:updated_time" content="2026-03-29T00:00:00Z" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://korayozkan.github.io/NewRssFeedbeta/" />
     <meta name="twitter:title" content="NewRssFeed: Sosyal Medya İçeriklerini Tek Akışta Birleştir" />
     <meta name="twitter:description" content="YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta birleştirin. 2026 Kapalı beta kaydı." />
     <meta name="twitter:image" content="https://korayozkan.github.io/NewRssFeedbeta/hero.png" />
     <meta name="twitter:image:alt" content="NewRssFeed sosyal medya akışı uygulaması" />
 
-    <!-- ─── PWA & Mobil ───────────────────────────────────────── -->
+    <!-- PWA, Mobil ve Tema Rengi -->
     <link rel="manifest" href="manifest.json" />
-    <meta name="theme-color" content="#7c3aed" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#7c3aed" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="NewRssFeed" />
-    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="hero.png" />
     <meta name="application-name" content="NewRssFeed" />
-    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
 
     <!-- ─── Structured Data (JSON-LD 2026 SEO Schema) ─────────── -->
     <script type="application/ld+json">
@@ -54,7 +64,7 @@
       "@type": "Organization",
       "name": "NewRssFeed",
       "url": "https://korayozkan.github.io/NewRssFeedbeta/",
-      "logo": "https://korayozkan.github.io/NewRssFeedbeta/favicon.svg",
+      "logo": "https://korayozkan.github.io/NewRssFeedbeta/hero.png",
       "email": "kiruhiofficial@proton.me",
       "description": "Sosyal medya içeriklerini tek bir akışta birleştiren platform.",
       "sameAs": ["https://github.com/korayozkan/NewRssFeedbeta"]
@@ -101,11 +111,10 @@
     <link rel="dns-prefetch" href="https://unpkg.com" />
 
     <!-- Tailwind CSS CDN — dark mode class strategy -->
-    <script>
-      window.tailwind = { config: { darkMode: 'class' } };
-    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config = { darkMode: 'class' }</script>
+    <script>
+      tailwind.config = { darkMode: 'class' };
+    </script>
 
     <!-- Flash-of-wrong-theme prevention -->
     <script>
