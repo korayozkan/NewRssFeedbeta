@@ -25,7 +25,7 @@ const translations: Record<Lang, Record<string, string>> = {
     'nav.langToggle': 'Dili değiştir',
 
     'hero.badge': 'Geliştirme aşamasında',
-    'hero.headline1': 'Sosyal medyanı',
+    'hero.headline1': 'Sosyal medya akışlarını',
     'hero.headline2a': 'tek bir yerde',
     'hero.headline2b': ' keşfet.',
     'hero.subtext': 'NewRssFeed, YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı ve arkadaşlarla birlikte keşfetmeyi hedefleyen bir proje. Şu anda geliştirme aşamasında.',
@@ -111,8 +111,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'footer.privacy': 'Gizlilik',
     'footer.terms': 'Kullanım Şartları',
     'footer.contact': 'İletişim',
-    'seo.title': 'NewRssFeed: Sosyal Medya Akışı | Geliştirme Aşamasında',
-    'seo.desc': 'YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı ve arkadaşlarla keşfetmeyi hedefleyen açık kaynak proje.',
+    'seo.title': 'NewRssFeed: Sosyal Medya Akış Toplayıcı Projesi',
+    'seo.desc': 'NewRssFeed, YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı hedefleyen açık kaynak bir projedir. Geliştirme aşamasında; beta ve özellikler henüz kesinleşmedi.',
   },
   en: {
     'nav.features': 'Features',
@@ -126,9 +126,9 @@ const translations: Record<Lang, Record<string, string>> = {
     'nav.langToggle': 'Change language',
 
     'hero.badge': 'In development',
-    'hero.headline1': 'Your social media',
-    'hero.headline2a': 'all in one place',
-    'hero.headline2b': '',
+    'hero.headline1': 'Social media feeds',
+    'hero.headline2a': 'in one place',
+    'hero.headline2b': '.',
     'hero.subtext': 'NewRssFeed is a project aiming to bring YouTube, Reddit, GitHub, X, and Medium content into one feed and help friends discover together. It is currently in development.',
     'hero.cta': 'Follow Updates',
     'hero.secondaryCta': 'How it works',
@@ -212,8 +212,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',
     'footer.contact': 'Contact',
-    'seo.title': 'NewRssFeed: Social Feed | In Development',
-    'seo.desc': 'An open-source project aiming to bring YouTube, Reddit, GitHub, X, and Medium into one feed for discovery with friends.',
+    'seo.title': 'NewRssFeed: Social Feed Aggregator Project',
+    'seo.desc': 'NewRssFeed is an open-source project in development aiming to bring YouTube, Reddit, GitHub, X, and Medium content into one feed. Beta availability is not confirmed.',
   }
 }
 
@@ -246,9 +246,9 @@ function Navbar(): string {
       <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
 
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 flex-shrink-0">
+        <a href="${basePath('')}" class="flex items-center gap-2 flex-shrink-0">
           <div class="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-[#6d4aff]/40">
-            <img src="${basePath('logo.jpg')}" alt="NewRssFeed Logo - Sosyal Medya Akış Platformu" width="36" height="36" loading="eager"
+            <img src="${basePath('image.png')}" alt="NewRssFeed" width="36" height="36" loading="eager"
               class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen" />
           </div>
           <span class="font-bold text-[#17151c] dark:text-white text-lg tracking-tight">NewRssFeed</span>
@@ -324,14 +324,10 @@ function HeroSection(): string {
           </div>
 
           <!-- Headline -->
-          <div class="flex flex-col gap-1">
-            <h1 class="text-5xl lg:text-6xl font-extrabold text-[#17151c] dark:text-white leading-[1.08] tracking-tight">
-              ${t('hero.headline1')}
-            </h1>
-            <h1 class="text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight">
-              <span class="text-[#6d4aff] dark:text-[#8b72ff]">${t('hero.headline2a')}</span><span class="text-[#17151c] dark:text-white">${t('hero.headline2b')}</span>
-            </h1>
-          </div>
+          <h1 class="flex flex-col gap-1 text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight">
+            <span class="text-[#17151c] dark:text-white">${t('hero.headline1')}</span>
+            <span><span class="text-[#6d4aff] dark:text-[#8b72ff]">${t('hero.headline2a')}</span><span class="text-[#17151c] dark:text-white">${t('hero.headline2b')}</span></span>
+          </h1>
 
           <!-- Subtext -->
           <p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed max-w-lg">
@@ -446,17 +442,19 @@ function ProblemSolutionSection(): string {
             ${currentLang === 'tr' ? 'Arayüz Konsepti' : 'Interface Concept'}
           </span>
           <h2 class="text-3xl lg:text-4xl font-extrabold text-[#17151c] dark:text-white mt-4 mb-3">
-            ${currentLang === 'tr' ? "NewRssFeed'in Tasarım Fikrini Görün" : 'Explore the NewRssFeed Concept'}
+            ${currentLang === 'tr' ? 'Sosyal medya akışlarını tek yerde toplama fikri' : 'The idea of bringing social feeds together'}
           </h2>
           <p class="text-gray-600 dark:text-gray-300 text-lg">
-            ${currentLang === 'tr' ? 'Görsel örnek, çalışan bir uygulama videosu değildir.' : 'This visual is a concept preview, not a video of a working application.'}
+            ${currentLang === 'tr'
+              ? 'Sosyal medya akış toplayıcı, farklı kaynaklardaki içerikleri tek ekranda izleme fikrine dayanır. NewRssFeed; YouTube, Reddit, GitHub, X ve Medium’u hedef kaynaklar olarak listeliyor. Bu bağlantıların beta sürümünde çalışıp çalışmayacağı henüz doğrulanmadı.'
+              : 'A social feed aggregator aims to bring content from different sources into one view. NewRssFeed lists YouTube, Reddit, GitHub, X, and Medium as target sources; availability in a beta release is not yet confirmed.'}
           </p>
         </div>
 
-        <!-- Video Player Wrapper -->
+        <!-- Static interface concept preview -->
         <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-gray-900 group flex items-center justify-center">
           <div class="absolute inset-0 bg-gradient-to-tr from-[#17151c]/80 via-transparent to-[#6d4aff]/30 pointer-events-none"></div>
-          <img src="${basePath('hero.png')}" alt="NewRssFeed Video Poster" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700" />
+          <img src="${basePath('hero.png')}" alt="NewRssFeed arayüz konsepti" width="1200" height="630" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover opacity-60 transition duration-700" />
 
           <div class="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between text-white text-sm font-medium">
             <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full">${currentLang === 'tr' ? 'Tasarım örneği' : 'Design concept'}</span>
@@ -568,7 +566,7 @@ function ProductShowcaseSection(): string {
                       w-[260px] sm:w-[300px]">
             <img
               src="${basePath('app-preview.png')}"
-              alt="NewRssFeed Uygulama Ekranı - Mobil Arayüz Önizlemesi"
+              alt="${currentLang === 'tr' ? 'NewRssFeed için planlanan akış ekranının tasarım örneği' : 'Concept design for the planned NewRssFeed feed screen'}"
               width="300" height="650"
               loading="lazy" decoding="async"
               class="w-full h-auto block" />
@@ -797,15 +795,13 @@ function Footer(): string {
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex items-center gap-3">
           <div class="w-8 h-8 rounded-xl overflow-hidden flex-shrink-0 ring-1 ring-[#6d4aff]/40">
-            <img src="${basePath('logo.jpg')}" alt="NewRssFeed Logo" width="32" height="32" loading="lazy"
+            <img src="${basePath('image.png')}" alt="NewRssFeed Logo" width="32" height="32" loading="lazy"
               class="w-full h-full object-cover [mix-blend-mode:multiply] dark:[mix-blend-mode:screen]" />
           </div>
           <span class="font-bold text-[#17151c] dark:text-white text-base">NewRssFeed</span>
         </div>
         <p class="text-xs text-gray-500 dark:text-gray-400 text-center">${t('footer.copyright')}</p>
         <div class="flex items-center gap-6">
-          <a href="#" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">${t('footer.privacy')}</a>
-          <a href="#" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">${t('footer.terms')}</a>
           <a href="https://github.com/korayozkan/NewRssFeedbeta" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">GitHub</a>
           <a href="mailto:kiruhiofficial@proton.me" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">${t('footer.contact')}</a>
         </div>
@@ -822,7 +818,7 @@ function SeoHead(): string {
     name: 'NewRssFeed',
     alternateName: 'New RSS Feed',
     url: 'https://korayozkan.github.io/NewRssFeedbeta/',
-    logo: 'https://korayozkan.github.io/NewRssFeedbeta/logo.jpg',
+    logo: 'https://korayozkan.github.io/NewRssFeedbeta/image.png',
     email: 'kiruhiofficial@proton.me',
     description: 'Sosyal medya içeriklerini tek bir akışta toplamayı hedefleyen, geliştirme aşamasındaki açık kaynak proje.',
     sameAs: [
