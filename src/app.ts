@@ -525,161 +525,24 @@ function AppPreview(): string {
   `
 }
 
-// ─── Why Section (Kullanıcı Neden NewRssFeed Kullanmalı? - Video Formatı) ────────
+// ─── Why Section (Kullanıcı Neden NewRssFeed Kullanmalı? - Sade Video Alanı) ─────
 function WhySection(): string {
   return /* html */ `
-    <section class="px-6 py-24 bg-white dark:bg-black transition-colors duration-300" id="why" aria-labelledby="why-heading">
-      <div class="max-w-6xl mx-auto">
-        <!-- Başlık ve Rozet -->
-        <div class="max-w-3xl mx-auto text-center mb-12">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60 mb-4">
-            <span class="w-2 h-2 rounded-full bg-purple-600 animate-pulse"></span>
-            ${t('why.badge')}
-          </div>
-          <h2 id="why-heading" class="text-3xl lg:text-5xl font-black text-gray-900 dark:text-white tracking-tight mb-4">
-            ${t('why.heading')}
-          </h2>
-          <p class="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed">
-            ${t('why.subtext')}
-          </p>
-        </div>
+    <section class="px-6 py-20 bg-white dark:bg-black transition-colors duration-300" id="why" aria-labelledby="why-heading">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 id="why-heading" class="text-3xl lg:text-4xl font-extrabold text-gray-900 dark:text-white mb-4">
+          ${t('why.heading')}
+        </h2>
+        <p class="text-gray-500 dark:text-gray-400 text-base md:text-lg mb-8">
+          ${t('why.subtext')}
+        </p>
 
-        <!-- Video Vitrini (Browser & Video Player Mockup) -->
-        <div class="mb-16 rounded-3xl overflow-hidden border border-gray-200/80 dark:border-gray-800 bg-gray-900 shadow-2xl shadow-purple-500/10 dark:shadow-purple-900/20">
-          <!-- Tarayıcı Üst Çubuğu (Window Chrome) -->
-          <div class="px-4 py-3 bg-gray-100 dark:bg-gray-900/90 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between gap-4">
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-red-400 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span>
-              <span class="w-3 h-3 rounded-full bg-green-400 inline-block"></span>
-            </div>
-            <div class="flex-1 max-w-md mx-auto hidden sm:flex items-center justify-center gap-2 px-3 py-1 rounded-lg bg-white dark:bg-black/50 text-xs text-gray-500 dark:text-gray-400 border border-gray-200/60 dark:border-gray-800 font-mono">
-              <i data-lucide="lock" class="w-3 h-3 text-green-500"></i>
-              <span>https://newrssfeed.com/demo-stream</span>
-            </div>
-            <div class="flex items-center gap-2 text-xs font-medium text-purple-600 dark:text-purple-400">
-              <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-              <span class="hidden sm:inline">2026 BETA DEMO</span>
-            </div>
-          </div>
-
-          <!-- Video Konteyneri -->
-          <div class="relative aspect-video w-full bg-black overflow-hidden group">
-            <video id="why-video" class="w-full h-full object-cover" poster="${basePath('hero.png')}" playsinline controls preload="metadata">
-              <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
-              Tarayıcınız video etiketini desteklemiyor.
-            </video>
-
-            <!-- Video Başlangıç Katmanı (Overlay) -->
-            <div id="video-overlay" class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/60 flex flex-col justify-between p-6 md:p-10 pointer-events-none transition-opacity duration-300">
-              <div class="flex items-center justify-between">
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-600/80 backdrop-blur text-white">
-                  Öne Çıkan Özellikler
-                </span>
-                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-black/60 backdrop-blur text-gray-300 border border-white/10">
-                  01:45 • HD
-                </span>
-              </div>
-
-              <!-- Ortadaki Büyük Play Butonu -->
-              <div class="self-center text-center pointer-events-auto">
-                <button id="video-play-btn" type="button" aria-label="Videoyu Oynat"
-                  class="w-20 h-20 md:w-24 md:h-24 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white flex items-center justify-center shadow-2xl shadow-purple-600/50 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer group mx-auto mb-4">
-                  <svg class="w-8 h-8 md:w-10 md:h-10 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
-                </button>
-                <h3 class="text-xl md:text-2xl font-bold text-white mb-1 drop-shadow-md">
-                  ${t('why.videoTitle')}
-                </h3>
-                <p class="text-xs md:text-sm text-gray-300 max-w-md mx-auto drop-shadow-sm">
-                  ${t('why.videoSubtitle')}
-                </p>
-              </div>
-
-              <!-- Alt Bilgi Çubuğu -->
-              <div class="flex items-center justify-between text-xs text-gray-400">
-                <span>YouTube • Reddit • GitHub • X • Medium</span>
-                <span>Tam Ekran ve Ses Kontrolü Açık</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Bölümleri (Chapters) -->
-          <div class="grid grid-cols-1 md:grid-cols-3 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800 text-left">
-            <button type="button" data-chapter="0" class="video-chapter-btn p-4 md:p-5 hover:bg-gray-100 dark:hover:bg-gray-800/60 transition-colors text-left flex items-start gap-3 cursor-pointer">
-              <div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xs flex-shrink-0">
-                01
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-gray-900 dark:text-white">${t('why.ch1')}</h4>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${t('why.ch1Desc')}</p>
-              </div>
-            </button>
-
-            <button type="button" data-chapter="15" class="video-chapter-btn p-4 md:p-5 hover:bg-gray-100 dark:hover:bg-gray-800/60 transition-colors text-left flex items-start gap-3 cursor-pointer">
-              <div class="w-8 h-8 rounded-lg bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 flex items-center justify-center font-bold text-xs flex-shrink-0">
-                02
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-gray-900 dark:text-white">${t('why.ch2')}</h4>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${t('why.ch2Desc')}</p>
-              </div>
-            </button>
-
-            <button type="button" data-chapter="35" class="video-chapter-btn p-4 md:p-5 hover:bg-gray-100 dark:hover:bg-gray-800/60 transition-colors text-left flex items-start gap-3 cursor-pointer">
-              <div class="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-xs flex-shrink-0">
-                03
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-gray-900 dark:text-white">${t('why.ch3')}</h4>
-                <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${t('why.ch3Desc')}</p>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <!-- 4 Değer Kartı (Neden NewRssFeed?) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <article class="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all flex flex-col gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-400 flex items-center justify-center">
-              <i data-lucide="compass" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">${t('why.r1Title')}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">${t('why.r1Desc')}</p>
-            </div>
-          </article>
-
-          <article class="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all flex flex-col gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-orange-100 dark:bg-orange-900/40 text-orange-600 dark:text-orange-400 flex items-center justify-center">
-              <i data-lucide="layers" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">${t('why.r2Title')}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">${t('why.r2Desc')}</p>
-            </div>
-          </article>
-
-          <article class="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all flex flex-col gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-              <i data-lucide="moon" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">${t('why.r3Title')}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">${t('why.r3Desc')}</p>
-            </div>
-          </article>
-
-          <article class="p-6 md:p-8 rounded-3xl bg-gray-50 dark:bg-gray-900/60 border border-gray-100 dark:border-gray-800 hover:border-purple-500/30 transition-all flex flex-col gap-4">
-            <div class="w-12 h-12 rounded-2xl bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 flex items-center justify-center">
-              <i data-lucide="shield-check" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">${t('why.r4Title')}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">${t('why.r4Desc')}</p>
-            </div>
-          </article>
+        <!-- Sadece Video -->
+        <div class="w-full aspect-video rounded-2xl overflow-hidden bg-black border border-gray-200 dark:border-gray-800 shadow-lg">
+          <video id="why-video" class="w-full h-full object-cover" poster="${basePath('hero.png')}" controls playsinline preload="metadata">
+            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+          </video>
         </div>
       </div>
     </section>
@@ -1052,51 +915,6 @@ export function initApp() {
           (window as any).lucide.createIcons()
         }
       }, 1000)
-    })
-  }
-
-  // ── Video Showcase Playback & Chapters ──
-  const video = document.getElementById('why-video') as HTMLVideoElement | null
-  const playBtn = document.getElementById('video-play-btn')
-  const overlay = document.getElementById('video-overlay')
-  const chapters = document.querySelectorAll('.video-chapter-btn')
-
-  if (video && playBtn) {
-    playBtn.addEventListener('click', () => {
-      if (video.paused) {
-        video.play().then(() => {
-          overlay?.classList.add('opacity-0', 'pointer-events-none')
-        }).catch(() => {})
-      } else {
-        video.pause()
-        overlay?.classList.remove('opacity-0', 'pointer-events-none')
-      }
-    })
-
-    video.addEventListener('play', () => {
-      overlay?.classList.add('opacity-0', 'pointer-events-none')
-    })
-
-    video.addEventListener('pause', () => {
-      overlay?.classList.remove('opacity-0', 'pointer-events-none')
-    })
-
-    video.addEventListener('ended', () => {
-      overlay?.classList.remove('opacity-0', 'pointer-events-none')
-    })
-
-    chapters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const time = Number((btn as HTMLElement).dataset.chapter || '0')
-        chapters.forEach(c => c.classList.remove('ring-2', 'ring-purple-500', 'bg-gray-100', 'dark:bg-gray-800'))
-        btn.classList.add('ring-2', 'ring-purple-500', 'bg-gray-100', 'dark:bg-gray-800')
-        if (video) {
-          video.currentTime = time
-          video.play().then(() => {
-            overlay?.classList.add('opacity-0', 'pointer-events-none')
-          }).catch(() => {})
-        }
-      })
     })
   }
 
