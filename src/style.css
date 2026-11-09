@@ -1,4 +1,11 @@
-/* NewRssFeed — Minimal global styles */
+/* NewRssFeed — Brand Color Palette */
+:root {
+  --color-majorelle: #6d4aff;
+  --color-slate-blue: #8b72ff;
+  --color-lavender: #eee9ff;
+  --color-white-smoke: #f5f4f7;
+  --color-shadow-grey: #17151c;
+}
 
 *,
 *::before,
@@ -8,10 +15,32 @@
 
 body {
   margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-white-smoke);
+  color: var(--color-shadow-grey);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  background-color: var(--color-shadow-grey);
+  color: var(--color-white-smoke);
 }
 
 html {
   scroll-behavior: smooth;
 }
+
+/* Custom Brand Utilities */
+.bg-brand-primary { background-color: #6d4aff; }
+.bg-brand-secondary { background-color: #8b72ff; }
+.bg-brand-lavender { background-color: #eee9ff; }
+.bg-brand-smoke { background-color: #f5f4f7; }
+.bg-brand-dark { background-color: #17151c; }
+
+.text-brand-primary { color: #6d4aff; }
+.text-brand-secondary { color: #8b72ff; }
+.text-brand-lavender { color: #eee9ff; }
+
+.border-brand-primary { border-color: #6d4aff; }
+.border-brand-secondary { border-color: #8b72ff; }
