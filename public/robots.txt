@@ -1,0 +1,44 @@
+# robots.txt: NewRssFeed 2026 SEO & AI Crawler Optimization
+# https://newrssfeed.com
+
+# Tüm genel arama motoru botlarına tam erişim izni
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# 2026 AI ve LLM Arama Motoru Botları (GEO / SGE / AI Overviews)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap konumu
+Sitemap: https://newrssfeed.com/sitemap.xml
