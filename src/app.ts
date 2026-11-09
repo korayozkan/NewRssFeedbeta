@@ -242,15 +242,15 @@ function BetaForm(): string {
              border border-gray-100 dark:border-gray-800
              p-6 w-full max-w-sm relative z-20">
 
-      <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-1">${t('form.title')}</h3>
-      <p class="text-sm text-gray-500 dark:text-gray-400 mb-5">${t('form.subtitle')}</p>
+      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-1">${t('form.title')}</h2>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mb-5">${t('form.subtitle')}</p>
 
       <form id="betaFormEl" class="flex flex-col gap-4" novalidate>
 
         <!-- Email -->
         <div>
           <div class="relative">
-            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">
               <i data-lucide="mail" class="w-4 h-4"></i>
             </span>
             <input id="beta-email" type="email" placeholder="${t('form.emailPlaceholder')}" required
@@ -258,7 +258,7 @@ function BetaForm(): string {
                      bg-white dark:bg-gray-800
                      border border-gray-200 dark:border-gray-700
                      text-gray-900 dark:text-white
-                     placeholder-gray-400 dark:placeholder-gray-500
+                     placeholder-gray-500 dark:placeholder-gray-400
                      focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" />
             <span class="absolute right-3 top-1/2 -translate-y-1/2 text-red-500 text-xs font-bold pointer-events-none">*</span>
           </div>
@@ -267,7 +267,7 @@ function BetaForm(): string {
 
         <!-- Username -->
         <div class="relative">
-          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 pointer-events-none">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 pointer-events-none">
             <i data-lucide="user" class="w-4 h-4"></i>
           </span>
           <input id="beta-username" type="text" placeholder="${t('form.usernamePlaceholder')}"
@@ -275,7 +275,7 @@ function BetaForm(): string {
                    bg-white dark:bg-gray-800
                    border border-gray-200 dark:border-gray-700
                    text-gray-900 dark:text-white
-                   placeholder-gray-400 dark:placeholder-gray-500
+                   placeholder-gray-500 dark:placeholder-gray-400
                    focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition" />
         </div>
 
@@ -283,31 +283,31 @@ function BetaForm(): string {
         <div>
           <p class="text-xs font-semibold text-gray-700 dark:text-gray-300 mb-2">
             ${t('form.platformsLabel')}
-            <span class="font-normal text-gray-400 dark:text-gray-500">${t('form.optional')}</span>
+            <span class="font-normal text-gray-600 dark:text-gray-300">${t('form.optional')}</span>
           </p>
           <div class="flex flex-wrap gap-2" id="platform-chips">
             <button type="button" data-platform="youtube"
               class="platform-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all
                      border border-gray-200 dark:border-gray-700
-                     text-gray-600 dark:text-gray-400">
+                     text-gray-700 dark:text-gray-300">
               ${si(SI.youtube, 'w-3.5 h-3.5 text-red-500 flex-shrink-0')}YouTube
             </button>
             <button type="button" data-platform="reddit"
               class="platform-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all
                      border border-gray-200 dark:border-gray-700
-                     text-gray-600 dark:text-gray-400">
+                     text-gray-700 dark:text-gray-300">
               ${si(SI.reddit, 'w-3.5 h-3.5 text-orange-500 flex-shrink-0')}Reddit
             </button>
             <button type="button" data-platform="github"
               class="platform-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all
                      border border-gray-200 dark:border-gray-700
-                     text-gray-600 dark:text-gray-400">
+                     text-gray-700 dark:text-gray-300">
               ${si(SI.github, 'w-3.5 h-3.5 text-gray-700 dark:text-gray-300 flex-shrink-0')}GitHub
             </button>
             <button type="button" data-platform="other"
               class="platform-chip flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-all
                      border border-gray-200 dark:border-gray-700
-                     text-gray-600 dark:text-gray-400">
+                     text-gray-700 dark:text-gray-300">
               ${t('form.other')} <i data-lucide="chevron-down" class="w-3 h-3"></i>
             </button>
           </div>
@@ -321,7 +321,7 @@ function BetaForm(): string {
                    bg-white dark:bg-gray-800
                    border border-gray-200 dark:border-gray-700
                    text-gray-900 dark:text-white
-                   placeholder-gray-400 dark:placeholder-gray-500
+                   placeholder-gray-500 dark:placeholder-gray-400
                    focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition"></textarea>
         </div>
 
@@ -333,10 +333,10 @@ function BetaForm(): string {
           ${t('form.submit')}
         </button>
 
-        <p class="text-center text-xs text-gray-400 dark:text-gray-500 flex items-center justify-center gap-1">
+        <p class="text-center text-xs text-gray-600 dark:text-gray-300 flex items-center justify-center gap-1">
           <i data-lucide="lock" class="w-3 h-3 flex-shrink-0"></i>
           ${t('form.privacySafe')}
-          <a href="#" class="text-purple-500">${t('form.privacyLink')}</a> ${t('form.privacyDetails')}
+          <a href="#" class="text-purple-500 font-medium">${t('form.privacyLink')}</a> ${t('form.privacyDetails')}
         </p>
       </form>
 
@@ -346,7 +346,7 @@ function BetaForm(): string {
           <i data-lucide="check-circle" class="w-8 h-8 text-green-500"></i>
         </div>
         <h4 class="font-bold text-gray-900 dark:text-white text-lg">${t('form.successTitle')}</h4>
-        <p class="text-sm text-gray-500 dark:text-gray-400 max-w-xs">${t('form.successText')}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 max-w-xs">${t('form.successText')}</p>
       </div>
     </div>
   `
