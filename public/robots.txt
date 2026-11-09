@@ -1,5 +1,5 @@
 # robots.txt: NewRssFeed 2026 SEO & AI Crawler Optimization
-# https://newrssfeed.com
+# https://korayozkan.github.io/NewRssFeedbeta/
 
 # Tüm genel arama motoru botlarına tam erişim izni
 User-agent: *
@@ -41,4 +41,4 @@ User-agent: CCBot
 Allow: /
 
 # Sitemap konumu
-Sitemap: https://newrssfeed.com/sitemap.xml
+Sitemap: https://korayozkan.github.io/NewRssFeedbeta/sitemap.xml
