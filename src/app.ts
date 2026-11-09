@@ -111,8 +111,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'footer.privacy': 'Gizlilik',
     'footer.terms': 'Kullanım Şartları',
     'footer.contact': 'İletişim',
-    'seo.title': 'NewRssFeed: Sosyal Medya Akış Toplayıcı Projesi',
-    'seo.desc': 'NewRssFeed, YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı hedefleyen açık kaynak bir projedir. Geliştirme aşamasında; beta ve özellikler henüz kesinleşmedi.',
+    'seo.title': 'NewRssFeed Beta | Sosyal Medya Akış Projesi',
+    'seo.desc': 'NewRssFeed, sosyal medya içeriklerini tek akışta keşfetme fikriyle geliştirilen açık kaynak bir projedir. Geliştirme sürüyor; beta tarihi henüz açıklanmadı.',
   },
   en: {
     'nav.features': 'Features',
@@ -212,8 +212,8 @@ const translations: Record<Lang, Record<string, string>> = {
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',
     'footer.contact': 'Contact',
-    'seo.title': 'NewRssFeed: Social Feed Aggregator Project',
-    'seo.desc': 'NewRssFeed is an open-source project in development aiming to bring YouTube, Reddit, GitHub, X, and Medium content into one feed. Beta availability is not confirmed.',
+    'seo.title': 'NewRssFeed Beta | Social Feed Project',
+    'seo.desc': 'NewRssFeed is an open-source project exploring a unified social media feed. Development is ongoing; a beta release date has not been announced.',
   }
 }
 
@@ -820,7 +820,7 @@ function SeoHead(): string {
     url: 'https://korayozkan.github.io/NewRssFeedbeta/',
     logo: 'https://korayozkan.github.io/NewRssFeedbeta/image.png',
     email: 'kiruhiofficial@proton.me',
-    description: 'Sosyal medya içeriklerini tek bir akışta toplamayı hedefleyen, geliştirme aşamasındaki açık kaynak proje.',
+    description: 'Sosyal medya içeriklerini tek akışta keşfetme fikriyle geliştirilen açık kaynak proje. Geliştirme sürüyor; beta tarihi henüz açıklanmadı.',
     sameAs: [
       'https://github.com/korayozkan/NewRssFeedbeta',
       'https://discord.gg/wBw3NwqhsR',

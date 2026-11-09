@@ -29,8 +29,8 @@ export function Hero() {
 
           <!-- Subtext -->
           <p class="text-gray-500 text-base leading-relaxed max-w-md">
-            NewRssFeed ile takip ettiğin platformları tek bir akışta birleştir.<br/>
-            Daha düzenli, daha özgür bir içerik deneyimi yaşa.
+            NewRssFeed, sosyal medya içeriklerini tek akışta keşfetme fikriyle geliştiriliyor.<br/>
+            Proje geliştirme aşamasında; beta tarihi henüz açıklanmadı.
           </p>
 
           <!-- Platform Icons -->
