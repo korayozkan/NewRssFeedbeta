@@ -1,6 +1,8 @@
 # NewRssFeed — Closed Beta 2026
 
 [![Deploy to GitHub Pages](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml/badge.svg)](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/wBw3NwqhsR)
+[![Instagram](https://img.shields.io/badge/Instagram-@newrssfeed-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/newrssfeed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
 **NewRssFeed** is a modern social media aggregator and RSS feed reader designed to combine all your favorite content platforms (YouTube, Reddit, GitHub, X, Medium) into a single, clutter-free, chronological stream.
@@ -44,6 +46,15 @@ npm run dev
 # Build static site for GitHub Pages
 npm run build:client
 ```
+
+---
+
+## 💬 Community & Social
+
+Join our community and follow our latest updates:
+- **Discord**: [Join our Discord Server](https://discord.gg/wBw3NwqhsR)
+- **Instagram**: [@newrssfeed](https://www.instagram.com/newrssfeed/)
+- **Contact Email**: `kiruhiofficial@proton.me`
 
 ---
 
