@@ -8,6 +8,11 @@ let currentLang: Lang = 'tr'
 export function setLang(lang: Lang) { currentLang = lang }
 export function getLang(): Lang { return currentLang }
 
+function basePath(path: string): string {
+  const base = (import.meta as any).env?.BASE_URL || '/'
+  return `${base}${path.startsWith('/') ? path.slice(1) : path}`
+}
+
 const translations: Record<Lang, Record<string, string>> = {
   tr: {
     'nav.features': 'Özellikler',
@@ -180,7 +185,7 @@ function Navbar(): string {
         <!-- Logo -->
         <a href="/" class="flex items-center gap-2 flex-shrink-0">
           <div class="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 ring-2 ring-orange-400/40">
-            <img src="/logo.jpg" alt="NewRssFeed logo" width="36" height="36" loading="eager"
+            <img src="${basePath('logo.jpg')}" alt="NewRssFeed logo" width="36" height="36" loading="eager"
               class="w-full h-full object-cover mix-blend-multiply dark:mix-blend-screen" />
           </div>
           <span class="font-bold text-gray-900 dark:text-white text-lg tracking-tight">NewRssFeed</span>
@@ -425,7 +430,7 @@ function Hero(): string {
           <div class="absolute -top-4 left-1/2 lg:left-auto lg:right-60 z-10 pointer-events-none"
                style="transform: translateX(-50%);">
             <img
-              src="/mascot.jpg"
+              src="${basePath('mascot.jpg')}"
               alt="NewRssFeed maskot"
               width="120" height="120"
               loading="eager"
@@ -477,7 +482,7 @@ function AppPreview(): string {
                         bg-gray-900
                         w-[230px] sm:w-[260px]">
               <img
-                src="/app-preview.png"
+                src="${basePath('app-preview.png')}"
                 alt="NewRssFeed uygulama ekranı"
                 width="260" height="567"
                 loading="lazy" decoding="async"
@@ -606,7 +611,7 @@ function Footer(): string {
       <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <div class="flex items-center gap-2">
           <div class="w-7 h-7 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-orange-400/30">
-            <img src="/logo.jpg" alt="NewRssFeed logo" width="28" height="28" loading="lazy"
+            <img src="${basePath('logo.jpg')}" alt="NewRssFeed logo" width="28" height="28" loading="lazy"
               class="w-full h-full object-cover [mix-blend-mode:multiply] dark:[mix-blend-mode:screen]" />
           </div>
           <span class="font-bold text-gray-800 dark:text-white text-sm">NewRssFeed</span>
