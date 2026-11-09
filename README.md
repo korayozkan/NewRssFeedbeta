@@ -1,23 +1,23 @@
-# NewRssFeed — Closed Beta 2026
+# NewRssFeed — In Development
 
 [![Deploy to GitHub Pages](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml/badge.svg)](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/wBw3NwqhsR)
 [![Instagram](https://img.shields.io/badge/Instagram-@newrssfeed-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/newrssfeed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 
-**NewRssFeed** is a modern social media aggregator and RSS feed reader designed to combine all your favorite content platforms (YouTube, Reddit, GitHub, X, Medium) into a single, clutter-free, chronological stream.
+**NewRssFeed** is an open-source project in development. Its goal is to explore bringing content from YouTube, Reddit, GitHub, X, and Medium into one feed, with shared discovery for friends. The current website is a landing page and interface concept, not the functioning feed product. Platform availability and release timing have not been confirmed.
 
 Live Demo: [https://korayozkan.github.io/NewRssFeedbeta/](https://korayozkan.github.io/NewRssFeedbeta/)
 
 ---
 
-## 🌟 Key Features
+## 🌟 Project Direction
 
-- **All-in-One Feed**: Combine YouTube, Reddit, GitHub, X (Twitter), and Medium into one clean stream.
-- **Bilingual Support (TR / EN)**: Fully localized interface with instant language switching.
-- **Pure Black Dark Mode**: Eye-friendly dark theme with zero light bleed.
-- **Laws of UX Interactive Showcase**: Built following core UX psychology principles (Fitts's Law, Hick's Law, Miller's Law, Jakob's Law, Aesthetic-Usability Effect, Von Restorff Effect).
-- **Closed Beta Application Form**: Interactive sign-up flow directly submitting feedback and requests to `kiruhiofficial@proton.me`.
+- **One Feed Vision**: Explore bringing content from several social platforms into one feed.
+- **Shared Discovery**: Plan a way for friends to discover content together.
+- **Bilingual Landing Page**: The current website supports Turkish and English.
+- **Beta Status**: Beta access is not open and no opening date or pricing has been announced.
+- **Contact Form**: The landing page opens an email draft. Visitors must send it themselves; applications are not automatically saved or submitted.
 
 ---
 
@@ -59,7 +59,7 @@ Join our community and follow our latest updates:
 ---
 
 ## 🛡️ Security & Privacy
-We value your privacy. NewRssFeed does not track you for ads or sell your personal data. For security disclosures, please review [SECURITY.md](SECURITY.md).
+The current landing page does not store beta applications on a server. Product data-handling details will be published before beta. For security disclosures, please review [SECURITY.md](SECURITY.md).
 
 ---
 

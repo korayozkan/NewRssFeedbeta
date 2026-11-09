@@ -1,4 +1,4 @@
-# robots.txt: NewRssFeed 2026 SEO & AI Crawler Optimization
+# NewRssFeed crawler access
 # https://korayozkan.github.io/NewRssFeedbeta/
 
 # Tüm genel arama motoru botlarına tam erişim izni
@@ -6,7 +6,7 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-# 2026 AI ve LLM Arama Motoru Botları (GEO / SGE / AI Overviews)
+# AI search crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -20,6 +20,12 @@ User-agent: PerplexityBot
 Allow: /
 
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Applebot
 Allow: /
 
 User-agent: Google-Extended
@@ -40,9 +46,9 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Sitemap & LLM Konumu
+# Sitemap
 Sitemap: https://korayozkan.github.io/NewRssFeedbeta/sitemap.xml
 
-# LLM / AI Okuma Standardı (llmstxt.org)
+# Additional project context for assistants (not required for search indexing)
 # https://korayozkan.github.io/NewRssFeedbeta/llms.txt
 # https://korayozkan.github.io/NewRssFeedbeta/llms-full.txt

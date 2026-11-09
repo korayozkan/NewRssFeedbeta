@@ -1,4 +1,4 @@
-// NewRssFeed — Main App Entry (Refactored per 11-step blueprint)
+// NewRssFeed — Main App Entry (Social Discovery & Shared Feeds with Friends)
 // Brand Palette: Majorelle Blue (#6d4aff), Medium Slate Blue (#8b72ff), Lavender (#eee9ff), White Smoke (#f5f4f7), Shadow Grey (#17151c)
 
 type Lang = 'tr' | 'en'
@@ -19,75 +19,79 @@ const translations: Record<Lang, Record<string, string>> = {
     'nav.about': 'Hakkımızda',
     'nav.pricing': 'Fiyatlandırma',
     'nav.faq': 'SSS',
-    'nav.signin': 'Giriş Yap',
-    'nav.cta': "Ücretsiz Başla",
+    'nav.signin': 'İletişim',
+    'nav.cta': 'Gelişmeleri Takip Et',
     'nav.themeToggle': 'Tema değiştir',
     'nav.langToggle': 'Dili değiştir',
 
-    'hero.badge': '2026 Kapalı Beta',
+    'hero.badge': 'Geliştirme aşamasında',
     'hero.headline1': 'Sosyal medyanı',
     'hero.headline2a': 'tek bir yerde',
     'hero.headline2b': ' keşfet.',
-    'hero.subtext': 'NewRssFeed ile takip ettiğin platformları tek bir akışta birleştir. Daha düzenli, daha özgür ve gürültüsüz bir içerik deneyimi yaşa.',
-    'hero.cta': 'Ücretsiz Başla',
+    'hero.subtext': 'NewRssFeed, YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı ve arkadaşlarla birlikte keşfetmeyi hedefleyen bir proje. Şu anda geliştirme aşamasında.',
+    'hero.cta': 'Gelişmeleri Takip Et',
     'hero.secondaryCta': 'Nasıl Çalışır?',
-    'hero.limited': 'Sınırlı beta erişimi 2026',
+    'hero.limited': 'Beta tarihi henüz açıklanmadı',
 
-    'proof.stat1': '2026',
-    'proof.stat1Desc': 'Kapalı Beta Dönemi',
-    'proof.stat2': '5+',
-    'proof.stat2Desc': 'Desteklenen Platform',
-    'proof.stat3': '%100',
-    'proof.stat3Desc': 'Açık Kaynak & Şeffaf',
+    'proof.stat1': 'YouTube · Reddit · GitHub · X · Medium',
+    'proof.stat1Desc': 'Projede adı geçen içerik kaynakları',
+    'proof.stat2': 'Açık kaynak',
+    'proof.stat2Desc': 'Projeyi GitHub’da incele',
+    'proof.stat3': 'Geliştirme aşamasında',
+    'proof.stat3Desc': 'Ortak akış fikri üzerinde çalışılıyor',
     'proof.openSource': 'GitHub Açık Kaynak Projesi',
 
-    'features.heading': 'Sosyal Medya Akışınızı Kolayca Yönetin',
-    'features.subtext': 'Tüm platformları tek bir ekranda birleştirerek zamandan tasarruf edin.',
-    'features.f1Title': 'Tüm İçerikler Tek Yerde',
-    'features.f1Desc': 'YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta birleştir.',
-    'features.f2Title': 'RSS Desteği',
-    'features.f2Desc': 'Dilediğiniz RSS ve Atom beslemelerini kolayca ekleyin.',
-    'features.f3Title': 'Kişiselleştirilmiş Akış',
-    'features.f4Title': 'Kaynak Yönetimi',
-    'features.f5Title': 'Arama ve Filtreleme',
-    'features.f6Title': 'OPML İçe/Dışa Aktarma',
+    'features.heading': 'Neden NewRssFeed?',
+    'features.subtext': 'Planlanan ürün fikri ve geliştirme hedefleri.',
+    'features.f1Title': 'Tek Akış Vizyonu',
+    'features.f1Desc': 'Proje, farklı sosyal kaynakları tek bir akışta toplamayı amaçlıyor.',
+    'features.f2Title': 'Arkadaşlarla Ortak Akış',
+    'features.f2Desc': 'Projenin hedefi, arkadaşlarınla ortak akışlar kurup içerikleri birlikte keşfedebilmek.',
+    'features.f3Title': 'Daha Sakin Bir Akış',
+    'features.f3Desc': 'Dağınık içerikleri tek yerde takip etme fikri üzerine geliştiriliyor.',
+    'features.f4Title': 'Kişiselleştirilmiş Akış',
+    'features.f4Desc': 'Kaynak seçimi ve akışı kişiselleştirme, planlanan deneyimin parçaları.',
+    'features.f5Title': 'Arama ve Filtreleme Hedefi',
+    'features.f5Desc': 'Arama ve filtreleme, geliştirme hedefleri arasında.',
+    'features.f6Title': 'Gizlilik Odaklı',
+    'features.f6Desc': 'Gizlilik ve reklam takibi yapmama proje hedefleri arasında.',
 
-    'how.heading': 'Nasıl Çalışır?',
-    'how.subtext': '3 kolay adımda kendi akışınızı kurun.',
-    'how.s1Title': '1. Hesap Oluştur',
-    'how.s1Desc': 'Saniyeler içinde kayıt olun ve beta davetinizi alın.',
-    'how.s2Title': '2. Kaynakları Ekle',
-    'how.s2Desc': 'Takip etmek istediğiniz platformları ve RSS linklerini ekleyin.',
-    'how.s3Title': '3. Tek Akışta Takip Et',
-    'how.s3Desc': 'İçeriklerinizi gürültüsüz, temiz ve kronolojik olarak okuyun.',
+    'how.heading': 'Planlanan Deneyim',
+    'how.subtext': 'Aşağıdaki adımlar ürün vizyonunu anlatıyor; henüz çalışan bir beta akışı değildir.',
+    'how.s1Title': '1. Kaynaklarını Seç',
+    'how.s1Desc': 'Beta erişimi henüz açılmadı. Duyurular için GitHub projesini takip edin.',
+    'how.s2Title': '2. Akışını Düzenle',
+    'how.s2Desc': 'Planlanan deneyim, farklı kaynakları tek akışta ve arkadaşlarla birlikte takip etmek.',
+    'how.s3Title': '3. Arkadaşlarınla Keşfet',
+    'how.s3Desc': 'Bu özellikler geliştirme hedefidir; henüz kullanılabilir olduklarını söylemiyoruz.',
 
-    'showcase.heading': 'Ürün Tanıtımı',
-    'showcase.subtext': 'Modern, hızlı ve göz yormayan arayüzümüzü keşfedin.',
+    'showcase.heading': 'Arayüz Konsepti',
+    'showcase.subtext': 'Bu bölüm ürünün nasıl görünebileceğini gösteren bir tasarım örneğidir; canlı uygulama değildir.',
 
     'pricing.heading': 'Fiyatlandırma',
-    'pricing.subtext': 'İhtiyacınıza uygun planı seçin, beta döneminde hemen başlayın.',
+    'pricing.subtext': 'Şu anda ürün ve fiyatlandırma üzerinde çalışıyoruz. Beta erişimi ve ücretler kesinleştiğinde burada paylaşacağız.',
 
     'faq.heading': 'Sıkça Sorulan Sorular',
     'faq.subtext': 'Aklında kalanları giderelim',
     'faq.q1': 'NewRssFeed nedir?',
-    'faq.a1': 'NewRssFeed, sosyal medya içeriklerini tek bir akışta birleştiren bir platformdur.',
-    'faq.q2': 'RSS nedir?',
-    'faq.a2': 'RSS, web sitelerindeki güncellemeleri takip etmenizi sağlayan standart bir formattır.',
-    'faq.q3': 'Hangi platformları destekliyorsunuz?',
-    'faq.a3': 'Şu anda YouTube, Reddit, GitHub, X (Twitter) ve Medium destekleniyor.',
-    'faq.q4': 'Kullanmak ücretsiz mi?',
-    'faq.a4': 'Evet, temel sürümümüz tamamen ücretsizdir. Ek özellikler için Premium planımız bulunmaktadır.',
-    'faq.q5': 'Hesap oluşturmam gerekiyor mu?',
-    'faq.a5': 'Beta süreci için başvuru formunu doldurmanız yeterlidir.',
+    'faq.a1': 'Farklı sosyal kaynakları tek akışta toplamayı ve arkadaşlarla içerik keşfetmeyi hedefleyen, geliştirme aşamasındaki açık kaynak bir proje.',
+    'faq.q2': 'Hangi platformları destekliyorsunuz?',
+    'faq.a2': 'Proje tanıtımında YouTube, Reddit, GitHub, X ve Medium kaynakları hedefleniyor. Her kaynağın beta sürümündeki kullanılabilirliği henüz doğrulanmadı.',
+    'faq.q3': 'Arkadaşlarımızla nasıl ortak akış kurabiliriz?',
+    'faq.a3': 'Arkadaşlarla ortak akış, projenin planlanan özelliklerinden biri. Kullanılabilir olduğunda beta duyurusunda ayrıntıları paylaşacağız.',
+    'faq.q4': 'Beta ne zaman açılacak?',
+    'faq.a4': 'Henüz kesin bir tarih açıklanmadı. Gelişmeler için GitHub deposunu takip edebilir veya e-posta ile bize ulaşabilirsiniz.',
+    'faq.q5': 'Kullanım ücretli olacak mı?',
+    'faq.a5': 'Henüz kesin fiyatlandırma belirlenmedi. Netleştiğinde duyuracağız.',
     'faq.q6': 'Verilerim nasıl korunuyor?',
-    'faq.a6': 'Verileriniz satılmaz ve reklam amaçlı takip edilmez.',
+    'faq.a6': 'Bu tanıtım sitesi e-posta uygulamanızda bir taslak açar; başvuru otomatik olarak sunucuya kaydedilmez. Ürün verilerinin işlenmesiyle ilgili ayrıntıları beta öncesinde yayımlayacağız.',
 
-    'finalCta.heading': 'İçeriklerini tek bir yerde keşfetmeye başla.',
-    'finalCta.subtext': '2026 kapalı beta programına katılın ve ilk deneyenlerden olun.',
-    'finalCta.btn': 'Ücretsiz Başla',
+    'finalCta.heading': 'NewRssFeed gelişmelerini takip et.',
+    'finalCta.subtext': 'Gelişmeleri takip etmek veya projeye ilgi bildirmek için e-posta taslağı oluşturun.',
+    'finalCta.btn': 'E-posta ile İlgi Bildir',
 
-    'form.title': 'Beta Başvurusu Yap',
-    'form.subtitle': 'Erken erişim için başvurun. Kayıtlar kiruhiofficial@proton.me adresine iletilir.',
+    'form.title': 'İlgi Bildir',
+    'form.subtitle': 'İlginizi e-posta ile bildirin. Gönder düğmesine sizin basmanız gerekir; başvuru siteye otomatik kaydedilmez.',
     'form.emailPlaceholder': 'E-posta adresin',
     'form.emailError': 'Geçerli bir e-posta adresi girin.',
     'form.usernamePlaceholder': 'Kullanıcı adın (isteğe bağlı)',
@@ -96,19 +100,19 @@ const translations: Record<Lang, Record<string, string>> = {
     'form.other': 'Diğer',
     'form.expectLabel': "NewRssFeed'den beklentin?",
     'form.expectPlaceholder': 'Fikirlerini bizimle paylaş...',
-    'form.submit': 'Başvuruyu e-posta ile Gönder',
+    'form.submit': 'E-posta taslağı oluştur',
     'form.sending': 'E-posta Hazırlanıyor...',
-    'form.privacySafe': 'Bilgilerin güvende.',
-    'form.privacyLink': 'Gizlilik Politikası',
-    'form.successTitle': 'Başvurun Alındı!',
-    'form.successText': 'Beta başvuru bilgileriniz kiruhiofficial@proton.me adresine iletilmek üzere hazırlandı.',
+    'form.privacySafe': 'Siteye başvuru kaydedilmez.',
+    'form.privacyLink': 'Doğrudan e-posta gönder',
+    'form.successTitle': 'E-posta Taslağı Hazırlama Denendi',
+    'form.successText': 'E-posta uygulamanız açıldıysa, ilginizin bize ulaşması için Gönder düğmesine basın. Açılmadıysa kiruhiofficial@proton.me adresine yazabilirsiniz.',
 
     'footer.copyright': '© 2026 NewRssFeed. Tüm hakları saklıdır.',
     'footer.privacy': 'Gizlilik',
     'footer.terms': 'Kullanım Şartları',
     'footer.contact': 'İletişim',
-    'seo.title': 'NewRssFeed: Sosyal Medya İçeriklerini Tek Akışta Birleştir | Beta 2026',
-    'seo.desc': "NewRssFeed ile YouTube, Reddit, GitHub, X ve Medium içeriklerini 2026'da tek bir akışta birleştirin. Daha düzenli, reklamsız ve özgür bir sosyal medya okuma deneyimi.",
+    'seo.title': 'NewRssFeed: Sosyal Medya Akışı | Geliştirme Aşamasında',
+    'seo.desc': 'YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta toplamayı ve arkadaşlarla keşfetmeyi hedefleyen açık kaynak proje.',
   },
   en: {
     'nav.features': 'Features',
@@ -116,75 +120,79 @@ const translations: Record<Lang, Record<string, string>> = {
     'nav.about': 'About',
     'nav.pricing': 'Pricing',
     'nav.faq': 'FAQ',
-    'nav.signin': 'Sign in',
-    'nav.cta': 'Start Free',
+    'nav.signin': 'Contact',
+    'nav.cta': 'Follow Updates',
     'nav.themeToggle': 'Toggle theme',
     'nav.langToggle': 'Change language',
 
-    'hero.badge': '2026 Closed Beta',
+    'hero.badge': 'In development',
     'hero.headline1': 'Your social media',
     'hero.headline2a': 'all in one place',
     'hero.headline2b': '',
-    'hero.subtext': 'Combine the platforms you follow into a single feed with NewRssFeed. Experience a more organized, cleaner, and freer content journey.',
-    'hero.cta': 'Start Free',
+    'hero.subtext': 'NewRssFeed is a project aiming to bring YouTube, Reddit, GitHub, X, and Medium content into one feed and help friends discover together. It is currently in development.',
+    'hero.cta': 'Follow Updates',
     'hero.secondaryCta': 'How it works',
-    'hero.limited': 'Limited beta access 2026',
+    'hero.limited': 'Beta date not announced',
 
-    'proof.stat1': '2026',
-    'proof.stat1Desc': 'Closed Beta Period',
-    'proof.stat2': '5+',
-    'proof.stat2Desc': 'Supported Platforms',
-    'proof.stat3': '100%',
-    'proof.stat3Desc': 'Open Source & Transparent',
+    'proof.stat1': 'YouTube · Reddit · GitHub · X · Medium',
+    'proof.stat1Desc': 'Content sources named in the project',
+    'proof.stat2': 'Open source',
+    'proof.stat2Desc': 'Explore the project on GitHub',
+    'proof.stat3': 'In development',
+    'proof.stat3Desc': 'Shared feeds are a planned direction',
     'proof.openSource': 'GitHub Open Source Project',
 
-    'features.heading': 'Manage Your Social Feed Easily',
-    'features.subtext': 'Save time by bringing all platforms together on a single screen.',
-    'features.f1Title': 'All Content in One Place',
-    'features.f1Desc': 'Combine YouTube, Reddit, GitHub, X, and Medium into a single feed.',
-    'features.f2Title': 'RSS Support',
-    'features.f2Desc': 'Easily add any RSS or Atom feeds you like.',
-    'features.f3Title': 'Personalized Stream',
-    'features.f4Title': 'Source Management',
-    'features.f5Title': 'Search & Filter',
-    'features.f6Title': 'OPML Import/Export',
+    'features.heading': 'Why NewRssFeed?',
+    'features.subtext': 'The product concept and its development goals.',
+    'features.f1Title': 'One Feed Vision',
+    'features.f1Desc': 'The project aims to bring different social sources into one feed.',
+    'features.f2Title': 'Shared Feeds with Friends',
+    'features.f2Desc': 'The project aims to let friends create shared feeds and discover content together.',
+    'features.f3Title': 'A Calmer Feed',
+    'features.f3Desc': 'The project is being developed around following content in one place.',
+    'features.f4Title': 'Personalized Stream',
+    'features.f4Desc': 'Choosing sources and personalizing a feed are part of the planned experience.',
+    'features.f5Title': 'Search & Filtering Goals',
+    'features.f5Desc': 'Search and filtering are among the development goals.',
+    'features.f6Title': 'Privacy Goals',
+    'features.f6Desc': 'Privacy and avoiding ad tracking are project goals.',
 
-    'how.heading': 'How It Works',
-    'how.subtext': 'Set up your own feed in 3 simple steps.',
-    'how.s1Title': '1. Create Account',
-    'how.s1Desc': 'Sign up in seconds and get your beta invite.',
-    'how.s2Title': '2. Add Sources',
-    'how.s2Desc': 'Add the platforms and RSS links you want to follow.',
-    'how.s3Title': '3. Follow in a Single Feed',
-    'how.s3Desc': 'Read your content clean, noise-free, and chronologically.',
+    'how.heading': 'Planned Experience',
+    'how.subtext': 'These steps describe the product vision, not a working beta flow.',
+    'how.s1Title': '1. Choose Sources',
+    'how.s1Desc': 'Beta access is not open yet. Follow the project on GitHub for updates.',
+    'how.s2Title': '2. Shape Your Feed',
+    'how.s2Desc': 'The planned experience brings different sources into one feed for you and your friends.',
+    'how.s3Title': '3. Discover with Friends',
+    'how.s3Desc': 'These are development goals; we are not claiming they are available yet.',
 
-    'showcase.heading': 'Product Showcase',
-    'showcase.subtext': 'Explore our modern, fast, and eye-friendly interface.',
+    'showcase.heading': 'Interface Concept',
+    'showcase.subtext': 'This section is a design example of what the product could look like, not a live application.',
 
     'pricing.heading': 'Pricing',
-    'pricing.subtext': 'Choose the plan that suits you, start immediately during beta.',
+    'pricing.subtext': 'The product and pricing are still being worked out. We will share beta access and fees here when they are confirmed.',
 
     'faq.heading': 'Frequently Asked Questions',
     'faq.subtext': "Let's clear things up",
     'faq.q1': 'What is NewRssFeed?',
-    'faq.a1': 'NewRssFeed is a platform that brings social media content together in a single feed.',
-    'faq.q2': 'What is RSS?',
-    'faq.a2': 'RSS is a standard format that lets you keep up with updates from websites.',
-    'faq.q3': 'Which platforms do you support?',
-    'faq.a3': 'Currently YouTube, Reddit, GitHub, X (Twitter), and Medium are supported.',
-    'faq.q4': 'Will it be free?',
-    'faq.a4': 'Yes, our core tier is completely free. We also offer a Premium plan for extra features.',
-    'faq.q5': 'Do I need to create an account?',
-    'faq.a5': 'Simply fill out the application form for the beta process.',
+    'faq.a1': 'An open-source project in development that aims to bring social sources into one feed and help friends discover content together.',
+    'faq.q2': 'Which platforms do you support?',
+    'faq.a2': 'The project description names YouTube, Reddit, GitHub, X, and Medium as target sources. Availability in a beta release has not yet been confirmed.',
+    'faq.q3': 'How can we create shared feeds with friends?',
+    'faq.a3': 'Shared feeds with friends are part of the project direction. We will share details in the beta announcement when available.',
+    'faq.q4': 'When will the beta open?',
+    'faq.a4': 'No date has been confirmed. Follow the GitHub repository or contact us by email for updates.',
+    'faq.q5': 'Will it be paid?',
+    'faq.a5': 'Pricing has not been decided yet. We will announce it once confirmed.',
     'faq.q6': 'Is my data safe?',
-    'faq.a6': 'Your data is never sold and not tracked for ads.',
+    'faq.a6': 'This landing page opens an email draft; it does not automatically save applications to a server. We will publish details about product data handling before beta.',
 
-    'finalCta.heading': 'Start discovering your content in one place.',
-    'finalCta.subtext': 'Join the 2026 closed beta program and be among the first.',
-    'finalCta.btn': 'Start Free',
+    'finalCta.heading': 'Follow NewRssFeed updates.',
+    'finalCta.subtext': 'Create an email draft to express interest or follow the project updates.',
+    'finalCta.btn': 'Express Interest by Email',
 
-    'form.title': 'Apply for Beta',
-    'form.subtitle': 'Apply for early access. Submissions are sent to kiruhiofficial@proton.me.',
+    'form.title': 'Express Interest',
+    'form.subtitle': 'Tell us you are interested by email. You must press Send; the application is not automatically saved on this site.',
     'form.emailPlaceholder': 'Your email address',
     'form.emailError': 'Please enter a valid email address.',
     'form.usernamePlaceholder': 'Your username (optional)',
@@ -193,19 +201,19 @@ const translations: Record<Lang, Record<string, string>> = {
     'form.other': 'Other',
     'form.expectLabel': 'What do you expect from NewRssFeed?',
     'form.expectPlaceholder': 'Share your thoughts with us...',
-    'form.submit': 'Submit via Email',
+    'form.submit': 'Create email draft',
     'form.sending': 'Preparing Email...',
-    'form.privacySafe': 'Your data is safe.',
-    'form.privacyLink': 'Privacy Policy',
-    'form.successTitle': 'Application Received!',
-    'form.successText': 'Your beta application details were prepared to be sent to kiruhiofficial@proton.me.',
+    'form.privacySafe': 'No application is saved on this site.',
+    'form.privacyLink': 'Email us directly',
+    'form.successTitle': 'Email Draft Requested',
+    'form.successText': 'If your email app opened, press Send to reach us. If it did not, email kiruhiofficial@proton.me directly.',
 
     'footer.copyright': '© 2026 NewRssFeed. All rights reserved.',
     'footer.privacy': 'Privacy',
     'footer.terms': 'Terms',
     'footer.contact': 'Contact',
-    'seo.title': 'NewRssFeed: Combine Social Media Content into a Single Feed | Beta 2026',
-    'seo.desc': 'Combine YouTube, Reddit, GitHub, X, and Medium content into a single stream with NewRssFeed. Experience a cleaner, ad-free content journey.',
+    'seo.title': 'NewRssFeed: Social Feed | In Development',
+    'seo.desc': 'An open-source project aiming to bring YouTube, Reddit, GitHub, X, and Medium into one feed for discovery with friends.',
   }
 }
 
@@ -401,28 +409,27 @@ function SocialProofSection(): string {
       <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center md:text-left">
         <div class="flex items-center justify-center md:justify-start gap-4">
           <div class="w-12 h-12 rounded-2xl bg-[#eee9ff] dark:bg-[#6d4aff]/20 flex items-center justify-center text-[#6d4aff]">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
-          </div>
-          <div>
-            <div class="font-extrabold text-2xl text-[#17151c] dark:text-white">${t('proof.stat1')}</div>
-            <div class="text-sm text-gray-600 dark:text-gray-300">${t('proof.stat1Desc')}</div>
-          </div>
-        </div>
-        <div class="flex items-center justify-center gap-4">
-          <div class="w-12 h-12 rounded-2xl bg-[#eee9ff] dark:bg-[#6d4aff]/20 flex items-center justify-center text-[#6d4aff]">
             <i data-lucide="layers" class="w-6 h-6"></i>
           </div>
           <div>
-            <div class="font-extrabold text-2xl text-[#17151c] dark:text-white">${t('proof.stat2')}</div>
-            <div class="text-sm text-gray-600 dark:text-gray-300">${t('proof.stat2Desc')}</div>
+            <div class="font-extrabold text-lg text-[#17151c] dark:text-white">${t('proof.stat1')}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-300">${t('proof.stat1Desc')}</div>
           </div>
         </div>
+        <a href="https://github.com/korayozkan/NewRssFeedbeta" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-4 text-left hover:opacity-80 transition-opacity">
+          <div class="w-12 h-12 rounded-2xl bg-[#eee9ff] dark:bg-[#6d4aff]/20 flex items-center justify-center text-[#6d4aff]">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <div class="font-extrabold text-xl text-[#17151c] dark:text-white">${t('proof.stat2')}</div>
+            <div class="text-sm text-gray-600 dark:text-gray-300">${t('proof.stat2Desc')}</div>
+          </div>
+        </a>
         <div class="flex items-center justify-center md:justify-end gap-4">
-          <a href="https://github.com/korayozkan/NewRssFeedbeta" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm font-semibold transition">
-            <i data-lucide="github" class="w-4 h-4"></i>
-            <span>${t('proof.openSource')}</span>
-          </a>
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-[#eee9ff] dark:bg-[#6d4aff]/20 flex items-center justify-center text-[#6d4aff]"><i data-lucide="hammer" class="w-6 h-6"></i></div>
+            <div class="text-left"><div class="font-extrabold text-lg text-[#17151c] dark:text-white">${t('proof.stat3')}</div><div class="text-sm text-gray-600 dark:text-gray-300">${t('proof.stat3Desc')}</div></div>
+          </div>
         </div>
       </div>
     </section>
@@ -436,13 +443,13 @@ function ProblemSolutionSection(): string {
       <div class="max-w-5xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-14">
           <span class="text-xs font-bold uppercase tracking-wider text-[#6d4aff] bg-[#eee9ff] dark:bg-[#6d4aff]/20 px-3 py-1.5 rounded-full">
-            ${currentLang === 'tr' ? 'Video Tanıtım' : 'Video Overview'}
+            ${currentLang === 'tr' ? 'Arayüz Konsepti' : 'Interface Concept'}
           </span>
           <h2 class="text-3xl lg:text-4xl font-extrabold text-[#17151c] dark:text-white mt-4 mb-3">
-            ${currentLang === 'tr' ? "NewRssFeed'i Çalışırken İzleyin" : 'Watch NewRssFeed in Action'}
+            ${currentLang === 'tr' ? "NewRssFeed'in Tasarım Fikrini Görün" : 'Explore the NewRssFeed Concept'}
           </h2>
           <p class="text-gray-600 dark:text-gray-300 text-lg">
-            ${currentLang === 'tr' ? 'Dağınık sosyal medya akışlarını nasıl saniyeler içinde tek yerde birleştirdiğimizi görün.' : 'See how we combine scattered social media feeds into one place in seconds.'}
+            ${currentLang === 'tr' ? 'Görsel örnek, çalışan bir uygulama videosu değildir.' : 'This visual is a concept preview, not a video of a working application.'}
           </p>
         </div>
 
@@ -451,14 +458,8 @@ function ProblemSolutionSection(): string {
           <div class="absolute inset-0 bg-gradient-to-tr from-[#17151c]/80 via-transparent to-[#6d4aff]/30 pointer-events-none"></div>
           <img src="${basePath('hero.png')}" alt="NewRssFeed Video Poster" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition duration-700" />
 
-          <!-- Play Button Overlay -->
-          <button aria-label="Videoyu Oynat" class="relative z-10 w-20 h-20 rounded-full bg-[#6d4aff] hover:bg-[#8b72ff] text-white flex items-center justify-center shadow-2xl transition transform group-hover:scale-110 cursor-pointer">
-            <i data-lucide="play" class="w-8 h-8 fill-current ml-1"></i>
-          </button>
-
           <div class="absolute bottom-6 left-6 right-6 z-10 flex items-center justify-between text-white text-sm font-medium">
-            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full">NewRssFeed 2026 Demo</span>
-            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full">1:45</span>
+            <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full">${currentLang === 'tr' ? 'Tasarım örneği' : 'Design concept'}</span>
           </div>
         </div>
       </div>
@@ -469,12 +470,12 @@ function ProblemSolutionSection(): string {
 // ─── 05. Özellikler (Features) ────────────────────────────────────────────────
 function FeaturesSection(): string {
   const features = [
-    { icon: 'rss', title: t('features.f1Title'), desc: t('features.f1Desc') },
-    { icon: 'book-open', title: t('features.f2Title'), desc: t('features.f2Desc') },
-    { icon: 'sliders', title: t('features.f3Title'), desc: currentLang === 'tr' ? 'İstediğiniz kaynakları ekleyin, sıralayın ve tamamen kendi zevkinize göre özelleştirin.' : 'Add, sort, and customize sources entirely to your taste.' },
-    { icon: 'folder-kanban', title: t('features.f4Title'), desc: currentLang === 'tr' ? 'Tüm aboneliklerinizi ve kategorilerinizi tek merkezden kolayca yönetin.' : 'Easily manage all your subscriptions and categories from a single hub.' },
-    { icon: 'search', title: t('features.f5Title'), desc: currentLang === 'tr' ? 'Akışınızdaki tüm içerikler arasında anında arama yapın ve filtreleyin.' : 'Instantly search and filter through all content in your stream.' },
-    { icon: 'file-up', title: t('features.f6Title'), desc: currentLang === 'tr' ? 'OPML desteği ile diğer okuyuculardaki verilerinizi saniyeler içinde içeri aktarın.' : 'Import your data from other readers in seconds with OPML support.' },
+    { icon: 'globe', title: t('features.f1Title'), desc: t('features.f1Desc') },
+    { icon: 'users', title: t('features.f2Title'), desc: t('features.f2Desc') },
+    { icon: 'shield-ban', title: t('features.f3Title'), desc: t('features.f3Desc') },
+    { icon: 'sliders', title: t('features.f4Title'), desc: t('features.f4Desc') },
+    { icon: 'search', title: t('features.f5Title'), desc: t('features.f5Desc') },
+    { icon: 'lock', title: t('features.f6Title'), desc: t('features.f6Desc') },
   ]
 
   const gridHtml = features.map(f => `
@@ -578,11 +579,8 @@ function ProductShowcaseSection(): string {
   `
 }
 
-// ─── 08. Fiyatlandırma (Pricing - 2 Options: Free & Premium) ─────────────────
+// ─── 08. Fiyatlandırma (Pricing Status) ───────────────────────────────────────
 function PricingSection(): string {
-  const priceUsd = 5
-  const priceTry = 179
-
   return /* html */ `
     <section class="py-20 px-6 bg-[#f5f4f7] dark:bg-gray-900 transition-colors" id="pricing">
       <div class="max-w-7xl mx-auto">
@@ -593,52 +591,13 @@ function PricingSection(): string {
           <p class="text-gray-600 dark:text-gray-300 text-lg">${t('pricing.subtext')}</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
-          <!-- Ücretsiz Plan -->
-          <div class="p-8 rounded-3xl bg-white dark:bg-[#17151c] border border-gray-200 dark:border-gray-800 shadow-sm flex flex-col justify-between">
-            <div>
-              <h3 class="text-2xl font-bold text-[#17151c] dark:text-white mb-2">${currentLang === 'tr' ? 'Ücretsiz' : 'Free'}</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">${currentLang === 'tr' ? 'Temel akış ve okuma deneyimi.' : 'Basic stream and reading experience.'}</p>
-              <div class="my-6">
-                <span class="text-4xl font-extrabold text-[#17151c] dark:text-white">0 ₺</span>
-                <span class="text-gray-500 dark:text-gray-400 text-xs block mt-1">${currentLang === 'tr' ? 'Sonsuza kadar ücretsiz' : 'Free forever'}</span>
-              </div>
-              <ul class="space-y-3 mb-8 text-sm text-gray-700 dark:text-gray-200">
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#6d4aff]"></i> ${currentLang === 'tr' ? '5 Platform Desteği' : '5 Platform Support'}</li>
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Standart Akış' : 'Standard Feed'}</li>
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-4 h-4 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Karanlık Mod' : 'Dark Mode'}</li>
-              </ul>
-            </div>
-            <button onclick="document.getElementById('beta-form').scrollIntoView({behavior:'smooth'}); setTimeout(() => document.getElementById('beta-email')?.focus(), 400);"
-              class="w-full py-3.5 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-[#17151c] dark:text-white font-bold text-sm transition cursor-pointer">
-              ${currentLang === 'tr' ? 'Ücretsiz Başla' : 'Start Free'}
-            </button>
-          </div>
-
-          <!-- Premium Plan ($5 / ~179 TRY) -->
-          <div class="p-8 rounded-3xl bg-white dark:bg-[#17151c] border-2 border-[#6d4aff] shadow-xl flex flex-col justify-between relative">
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#6d4aff] text-white text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full">
-              ${currentLang === 'tr' ? 'En Popüler' : 'Most Popular'}
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-[#17151c] dark:text-white mb-2">Premium</h3>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-6">${currentLang === 'tr' ? 'Profesyoneller için sınırsız güç.' : 'Unlimited power for professionals.'}</p>
-              <div class="my-6">
-                <span class="text-4xl font-extrabold text-[#17151c] dark:text-white">${priceTry} ₺</span>
-                <span class="text-gray-500 dark:text-gray-400 text-xs block mt-1">($${priceUsd} / ${currentLang === 'tr' ? 'aylık' : 'month'})</span>
-              </div>
-              <ul class="space-y-3 mb-8 text-sm text-gray-700 dark:text-gray-200">
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Sınırsız Platform ve RSS' : 'Unlimited Platforms & RSS'}</li>
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Gelişmiş Filtreleme & AI' : 'Advanced Filtering & AI'}</li>
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Öncelikli Sunucu Desteği' : 'Priority Server Support'}</li>
-                <li class="flex items-center gap-3"><i data-lucide="check" class="w-5 h-5 text-[#6d4aff]"></i> ${currentLang === 'tr' ? 'Özel Temalar & OPML' : 'Custom Themes & OPML'}</li>
-              </ul>
-            </div>
-            <button onclick="document.getElementById('beta-form').scrollIntoView({behavior:'smooth'}); setTimeout(() => document.getElementById('beta-email')?.focus(), 400);"
-              class="w-full py-3.5 rounded-xl bg-[#6d4aff] hover:bg-[#8b72ff] text-white font-bold text-sm shadow-md transition cursor-pointer">
-              ${currentLang === 'tr' ? "Premium'a Geç" : "Go Premium"}
-            </button>
-          </div>
+        <div class="max-w-2xl mx-auto p-8 md:p-10 rounded-3xl bg-white dark:bg-[#17151c] border border-gray-200 dark:border-gray-800 shadow-sm text-center">
+          <div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-[#eee9ff] dark:bg-[#6d4aff]/20 flex items-center justify-center text-[#6d4aff]"><i data-lucide="clipboard-list" class="w-7 h-7"></i></div>
+          <h3 class="text-2xl font-bold text-[#17151c] dark:text-white mb-3">${currentLang === 'tr' ? 'Beta ve fiyatlandırma henüz netleşmedi' : 'Beta access and pricing are not confirmed yet'}</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">${currentLang === 'tr' ? 'Kesinleşmemiş ücret veya özellik sözü vermiyoruz. Yeni bilgiler açıklandığında bu sayfayı güncelleyeceğiz.' : 'We are not promising unconfirmed prices or features. This page will be updated when details are announced.'}</p>
+          <a href="https://github.com/korayozkan/NewRssFeedbeta" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#6d4aff] hover:bg-[#8b72ff] text-white font-semibold text-sm transition">
+            <i data-lucide="github" class="w-4 h-4"></i>${currentLang === 'tr' ? 'Gelişmeleri GitHub’da Takip Et' : 'Follow updates on GitHub'}
+          </a>
         </div>
       </div>
     </section>
@@ -748,7 +707,7 @@ function BetaForm(): string {
         <p class="text-center text-xs text-gray-600 dark:text-gray-300 flex items-center justify-center gap-1">
           <i data-lucide="lock" class="w-3 h-3 flex-shrink-0"></i>
           ${t('form.privacySafe')}
-          <a href="#" class="text-[#6d4aff] font-medium">${t('form.privacyLink')}</a>
+          <a href="mailto:kiruhiofficial@proton.me" class="text-[#6d4aff] font-medium">${t('form.privacyLink')}</a>
         </p>
       </form>
 
@@ -861,48 +820,31 @@ function SeoHead(): string {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'NewRssFeed',
+    alternateName: 'New RSS Feed',
     url: 'https://korayozkan.github.io/NewRssFeedbeta/',
-    logo: 'https://korayozkan.github.io/NewRssFeedbeta/favicon.svg',
+    logo: 'https://korayozkan.github.io/NewRssFeedbeta/logo.jpg',
     email: 'kiruhiofficial@proton.me',
-    description: 'Sosyal medya içeriklerini tek bir akışta birleştiren platform.',
-    sameAs: ['https://github.com/korayozkan/NewRssFeedbeta']
+    description: 'Sosyal medya içeriklerini tek bir akışta toplamayı hedefleyen, geliştirme aşamasındaki açık kaynak proje.',
+    sameAs: [
+      'https://github.com/korayozkan/NewRssFeedbeta',
+      'https://discord.gg/wBw3NwqhsR',
+      'https://www.instagram.com/newrssfeed/'
+    ]
   }
 
   const site = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'NewRssFeed',
+    alternateName: 'New RSS Feed',
     url: 'https://korayozkan.github.io/NewRssFeedbeta/',
     inLanguage: 'tr-TR',
-    description: 'Sosyal medya içeriklerini tek bir akışta birleştir. YouTube, Reddit, GitHub, X ve Medium.',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: 'https://korayozkan.github.io/NewRssFeedbeta/?q={search_term_string}',
-      'query-input': 'required name=search_term_string'
-    }
-  }
-
-  const app = {
-    '@context': 'https://schema.org',
-    '@type': 'SoftwareApplication',
-    name: 'NewRssFeed',
-    applicationCategory: 'SocialNetworkingApplication',
-    operatingSystem: 'Web',
-    url: 'https://korayozkan.github.io/NewRssFeedbeta/',
-    description: 'YouTube, Reddit, GitHub, X ve Medium içeriklerini tek akışta birleştiren sosyal medya okuyucu.',
-    inLanguage: 'tr-TR',
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'TRY',
-      availability: 'https://schema.org/InStock'
-    }
+    description: 'Farklı sosyal kaynakları tek akışta toplamayı hedefleyen geliştirme aşamasındaki proje.'
   }
 
   return /* html */ `
     <script type="application/ld+json">${JSON.stringify(org)}</script>
     <script type="application/ld+json">${JSON.stringify(site)}</script>
-    <script type="application/ld+json">${JSON.stringify(app)}</script>
   `
 }
 
@@ -1025,7 +967,7 @@ export function initApp() {
 
   // ── Sign-in handler (alert) ──
   document.getElementById('signin-btn')?.addEventListener('click', () => {
-    alert(currentLang === 'tr' ? 'Kapalı beta sürecindeyiz. Lütfen Ücretsiz Başla butonu ile beta başvurusu yapın.' : 'We are in closed beta. Please apply for beta using the Start Free button.')
+    window.location.href = 'mailto:kiruhiofficial@proton.me'
   })
 
   // ── Platform chip toggle ──
@@ -1059,14 +1001,14 @@ export function initApp() {
         .map(c => (c as HTMLElement).dataset.platform || (c as HTMLElement).innerText.trim())
       const platformsStr = activePlatforms.length > 0 ? activePlatforms.join(', ') : 'Belirtilmedi'
 
-      const subject = encodeURIComponent(`NewRssFeed 2026 Beta Başvurusu (${email})`)
+      const subject = encodeURIComponent(`${currentLang === 'tr' ? 'NewRssFeed ilgi bildirimi' : 'NewRssFeed expression of interest'} (${email})`)
       const body = encodeURIComponent(
-        `Merhaba,\n\nNewRssFeed Kapalı Beta katılım talebi:\n\n` +
-        `• E-posta Adresi: ${email}\n` +
-        `• Kullanıcı Adı: ${username}\n` +
-        `• Tercih Edilen Platformlar: ${platformsStr}\n` +
-        `• Beklentiler / Fikirler: ${expect}\n\n` +
-        `Tarih: 2026\n`
+        `${currentLang === 'tr' ? 'Merhaba' : 'Hello'},\n\n${currentLang === 'tr' ? 'NewRssFeed projesine ilgimi bildirmek istiyorum' : 'I would like to express interest in the NewRssFeed project'}.\n\n` +
+        `${currentLang === 'tr' ? 'E-posta adresi' : 'Email'}: ${email}\n` +
+        `${currentLang === 'tr' ? 'Kullanıcı adı' : 'Username'}: ${username}\n` +
+        `${currentLang === 'tr' ? 'İlgilendiğim platformlar' : 'Platforms of interest'}: ${platformsStr}\n` +
+        `${currentLang === 'tr' ? 'Beklenti ve fikirler' : 'Expectations and ideas'}: ${expect}\n\n` +
+        `${currentLang === 'tr' ? 'Tarih' : 'Date'}: ${new Date().toLocaleDateString(currentLang === 'tr' ? 'tr-TR' : 'en-US')}\n`
       )
 
       const mailtoUrl = `mailto:kiruhiofficial@proton.me?subject=${subject}&body=${body}`
