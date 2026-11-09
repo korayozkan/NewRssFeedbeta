@@ -33,6 +33,15 @@ if (!isProduction) {
 }
 
 // Serve HTML
+app.get(['/docs', '/docs/'], async (_req, res) => {
+  try {
+    const docsHtml = await fs.readFile('./public/docs/index.html', 'utf-8')
+    res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(docsHtml)
+  } catch {
+    res.status(404).end('Documentation page not found')
+  }
+})
+
 app.use('*all', async (req, res) => {
   try {
     const url = req.originalUrl.replace(base, '')

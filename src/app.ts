@@ -802,6 +802,7 @@ function Footer(): string {
         </div>
         <p class="text-xs text-gray-500 dark:text-gray-400 text-center">${t('footer.copyright')}</p>
         <div class="flex items-center gap-6">
+          <a href="docs/index.html" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">${currentLang === 'tr' ? 'Dokümantasyon' : 'Docs'}</a>
           <a href="https://github.com/korayozkan/NewRssFeedbeta" target="_blank" rel="noopener noreferrer" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">GitHub</a>
           <a href="mailto:kiruhiofficial@proton.me" class="text-xs text-gray-600 dark:text-gray-300 hover:text-[#6d4aff] transition-colors">${t('footer.contact')}</a>
         </div>

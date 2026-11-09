@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dokümantasyon | NewRssFeed</title>
+    <meta name="description" content="NewRssFeed projesinin amacı, geliştirme durumu, hedeflenen kaynakları, beta bilgileri ve gizlilik yaklaşımı hakkında dokümantasyon." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://korayozkan.github.io/NewRssFeedbeta/docs/" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+    <meta name="theme-color" content="#17151c" />
+    <style>
+      :root { color-scheme: light dark; --bg:#f7f6fa; --surface:#fff; --text:#201d29; --muted:#625e6d; --line:#e6e2ec; --accent:#6848e8; --soft:#eee9ff; }
+      @media (prefers-color-scheme: dark) { :root { --bg:#17151c; --surface:#211e28; --text:#f7f5fb; --muted:#c2bdcd; --line:#393443; --accent:#b3a0ff; --soft:#302943; } }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; background:var(--bg); color:var(--text); font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif; }
+      a { color:var(--accent); text-underline-offset:3px; }
+      .topbar { background:var(--surface); border-bottom:1px solid var(--line); }
+      .topbar-inner, main, footer { width:min(100% - 32px, 1040px); margin:auto; }
+      .topbar-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+      .brand { display:inline-flex; align-items:center; gap:10px; color:var(--text); font-weight:750; text-decoration:none; }
+      .brand img { width:38px; height:38px; border-radius:12px; }
+      .top-link { font-size:.92rem; font-weight:650; }
+      main { padding:54px 0 72px; }
+      .eyebrow { display:inline-block; padding:4px 12px; border-radius:999px; background:var(--soft); color:var(--accent); font-size:.8rem; font-weight:750; }
+      h1 { margin:14px 0 12px; font-size:clamp(2.2rem,6vw,3.6rem); line-height:1.12; letter-spacing:-.045em; }
+      h2 { margin:0 0 10px; font-size:1.42rem; line-height:1.3; }
+      p { margin:0 0 14px; color:var(--muted); }
+      .intro { max-width:760px; font-size:1.12rem; }
+      .status { display:inline-flex; align-items:center; gap:9px; margin-top:8px; padding:9px 13px; border:1px solid var(--line); border-radius:12px; background:var(--surface); font-size:.92rem; }
+      .status-dot { width:9px; height:9px; border-radius:50%; background:#e5a638; }
+      .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:34px; align-items:start; margin-top:44px; }
+      aside, article section { padding:22px; border:1px solid var(--line); border-radius:18px; background:var(--surface); }
+      aside { position:sticky; top:20px; }
+      aside strong { display:block; margin-bottom:12px; }
+      aside a { display:block; padding:5px 0; color:var(--muted); font-size:.92rem; text-decoration:none; }
+      aside a:hover { color:var(--accent); }
+      article { display:grid; gap:16px; }
+      article section p:last-child, article section ul:last-child { margin-bottom:0; }
+      ul { margin:8px 0 14px; padding-left:22px; color:var(--muted); }
+      li + li { margin-top:6px; }
+      .callout { padding:14px 16px; border-left:3px solid var(--accent); border-radius:8px; background:var(--soft); color:var(--text); }
+      code { padding:2px 6px; border-radius:6px; background:var(--soft); font-size:.92em; }
+      footer { padding:20px 0 34px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+      @media (max-width:700px) { .layout { grid-template-columns:1fr; } aside { position:static; } main { padding-top:38px; } }
+      @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="../"><img src="../image.png" alt="" width="38" height="38" /><span>NewRssFeed</span></a>
+        <a class="top-link" href="../">Ana sayfaya dön</a>
+      </div>
+    </header>
+
+    <main>
+      <span class="eyebrow">Proje dokümantasyonu</span>
+      <h1>NewRssFeed hakkında</h1>
+      <p class="intro">NewRssFeed, farklı sosyal medya kaynaklarından içerikleri tek bir akışta keşfetme fikrini araştıran açık kaynak bir projedir. Bu sayfa projenin amacını, mevcut durumunu ve beta hakkındaki doğrulanmış bilgileri açıklar.</p>
+      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>Geliştirme aşamasında</strong><span>· Beta tarihi açıklanmadı</span></div>
+
+      <div class="layout">
+        <aside aria-label="Sayfa içeriği">
+          <strong>Bu sayfada</strong>
+          <a href="#project">Proje nedir?</a>
+          <a href="#status">Mevcut durum</a>
+          <a href="#sources">Hedeflenen kaynaklar</a>
+          <a href="#beta">Beta ve fiyatlandırma</a>
+          <a href="#privacy">Gizlilik ve iletişim</a>
+          <a href="#source-code">Kaynak kodu</a>
+        </aside>
+
+        <article>
+          <section id="project">
+            <h2>Proje nedir?</h2>
+            <p>NewRssFeed’in hedefi, farklı platformlardaki içerikleri tek yerde takip etmeyi ve arkadaşlarla birlikte keşfetmeyi mümkün kılacak bir deneyim tasarlamaktır. Proje açık kaynak olarak geliştiriliyor.</p>
+            <p class="callout"><strong>Önemli:</strong> Yayındaki web sitesi şu anda tanıtım sayfası ve arayüz konseptidir. Çalışan bir içerik toplama ürünü olarak sunulmamaktadır.</p>
+          </section>
+
+          <section id="status">
+            <h2>Mevcut durum</h2>
+            <p>Proje geliştirme aşamasındadır. Sitedeki görseller ve akış örnekleri konsept tasarımları gösterir; ürün özelliklerinin hazır veya kullanılabilir olduğu anlamına gelmez.</p>
+            <ul>
+              <li>Beta erişimi henüz açılmadı.</li>
+              <li>Beta için bir çıkış tarihi duyurulmadı.</li>
+              <li>Ürün özellikleri ve desteklenecek platformlar kesinleşmedi.</li>
+            </ul>
+          </section>
+
+          <section id="sources">
+            <h2>Hedeflenen içerik kaynakları</h2>
+            <p>Proje tanıtımında YouTube, Reddit, GitHub, X ve Medium adı geçen hedef kaynaklardır. Herhangi bir entegrasyonun beta sürümünde çalışacağı henüz doğrulanmış değildir. Platformların erişim kuralları ve teknik koşulları geliştirme sırasında değerlendirilir.</p>
+          </section>
+
+          <section id="beta">
+            <h2>Beta ve fiyatlandırma</h2>
+            <p>Beta katılımı, özellikler ve fiyatlandırma hakkında kesinleşmiş bir duyuru yoktur. Yeni bilgiler açıklandığında proje web sitesi ve GitHub deposu güncellenecektir. Henüz açılmamış bir beta için başvuru veya erişim garantisi verilmez.</p>
+          </section>
+
+          <section id="privacy">
+            <h2>Gizlilik ve iletişim</h2>
+            <p>Bu tanıtım sayfasındaki ilgi formu, e-posta uygulamanızda bir taslak oluşturur. Form bilgileri bu site üzerinden otomatik olarak gönderilmez veya bir sunucuya kaydedilmez; e-postayı göndermek için kendi e-posta uygulamanızda ayrıca onay vermeniz gerekir.</p>
+            <p>Soru ve öneriler için <a href="mailto:kiruhiofficial@proton.me">kiruhiofficial@proton.me</a> adresine yazabilirsiniz. Ürün beta aşamasına geçmeden önce ürün verilerinin işlenmesine ilişkin bilgiler ayrıca yayımlanacaktır.</p>
+          </section>
+
+          <section id="source-code">
+            <h2>Kaynak kodu ve katkı</h2>
+            <p>Kaynak kodunu, geliştirme geçmişini ve katkı yönergelerini <a href="https://github.com/korayozkan/NewRssFeedbeta">GitHub deposunda</a> bulabilirsiniz. Güvenlik bildirimi için depodaki <a href="https://github.com/korayozkan/NewRssFeedbeta/blob/main/SECURITY.md">SECURITY.md</a> dosyasını inceleyin.</p>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer>© 2026 NewRssFeed · <a href="../">Ana sayfa</a> · <a href="https://github.com/korayozkan/NewRssFeedbeta">GitHub</a></footer>
+  </body>
+</html>
