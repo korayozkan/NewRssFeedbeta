@@ -256,10 +256,12 @@ function Navbar(): string {
 
         <!-- Nav Links (desktop) -->
         <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${currentLang === 'tr' ? 'Proje' : 'Project'}</a>
           <a href="#features" class="text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${t('nav.features')}</a>
           <a href="#how-it-works" class="text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${t('nav.how')}</a>
           <a href="#pricing"  class="text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${t('nav.pricing')}</a>
           <a href="#faq"      class="text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${t('nav.faq')}</a>
+          <a href="docs/index.html" class="hidden xl:inline text-gray-600 dark:text-gray-300 text-sm font-medium transition-colors hover:text-[#6d4aff]">${currentLang === 'tr' ? 'Dokümantasyon' : 'Docs'}</a>
         </div>
 
         <!-- Right: lang toggle + dark toggle + Sign in + CTA -->

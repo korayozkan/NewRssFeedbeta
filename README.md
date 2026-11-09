@@ -1,6 +1,6 @@
 # NewRssFeed — In Development
 
-[![Deploy to GitHub Pages](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml/badge.svg)](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/deploy.yml)
+[![Deploy to GitHub Pages](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/static.yml/badge.svg)](https://github.com/korayozkan/NewRssFeedbeta/actions/workflows/static.yml)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/wBw3NwqhsR)
 [![Instagram](https://img.shields.io/badge/Instagram-@newrssfeed-E4405F?logo=instagram&logoColor=white)](https://www.instagram.com/newrssfeed/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
