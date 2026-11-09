@@ -1,0 +1,48 @@
+# NewRssFeed
+
+> Modern sosyal medya akış toplayıcısı ve RSS okuyucu (YouTube, Reddit, GitHub, X, Medium tek bir kronolojik akışta).
+> Modern social media aggregator and RSS feed reader combining YouTube, Reddit, GitHub, X, and Medium into a single, chronological, ad-free stream.
+
+NewRssFeed, kullanıcıları algoritmik manipülasyonlardan ve dikkat dağıtıcı unsurlardan kurtarmak için tasarlanmış, açık kaynak ve gizlilik odaklı bir sosyal medya okuyucusudur. Şu anda 2026 Kapalı Beta (Closed Beta) aşamasındadır.
+
+## Temel Özellikler (Key Features)
+
+- **Hepsi Bir Arada Akış (All-in-One Feed)**: YouTube, Reddit, GitHub, X (Twitter) ve Medium içeriklerini tek bir temiz akışta birleştirir.
+- **Kronolojik ve Reklamsız**: Algoritmik sıralama veya sponsorlu içerik olmadan saf zaman sıralı akış.
+- **Saf Siyah Koyu Mod (Pure Black Dark Mode)**: Sıfır ışık sızıntısı sağlayan OLED dostu siyah tema ve temiz açık tema desteği.
+- **Çift Dil Desteği (Bilingual TR / EN)**: Anında dil değiştirme olanağı ile Türkçe ve İngilizce arayüz.
+- **UX Psikolojisi Yasaları**: Hick, Fitts, Miller, Jakob yasaları, Estetik-Kullanılabilirlik Etkisi ve Von Restorff Etkisi prensipleriyle tasarlanmıştır.
+- **Gizlilik Öncelikli**: Kullanıcı verileri satılmaz, reklam amaçlı takip yapılmaz.
+
+## Kapalı Beta Başvurusu (Closed Beta Access)
+
+- **Durum**: Aktif Kapalı Beta (2026)
+- **Başvuru Formu**: https://korayozkan.github.io/NewRssFeedbeta/#beta-form
+- **İletişim & Geri Bildirim E-postası**: kiruhiofficial@proton.me
+
+## Topluluk ve Bağlantılar (Community & Links)
+
+- **Web Sitesi**: https://korayozkan.github.io/NewRssFeedbeta/
+- **GitHub Deposu**: https://github.com/korayozkan/NewRssFeedbeta
+- **Discord Topluluğu**: https://discord.gg/wBw3NwqhsR
+- **Instagram**: https://www.instagram.com/newrssfeed/
+
+## Sıkça Sorulan Sorular (FAQ)
+
+### NewRssFeed nedir?
+NewRssFeed, YouTube, Reddit, GitHub, X ve Medium gibi farklı platformlardaki içerikleri tek bir ekranda toplayarak kullanıcının platformlar arasında kaybolmasını önleyen modern bir akış okuyucudur.
+
+### Beta süreci nasıl işliyor?
+Kapalı beta dönemindedir. Web sitesindeki form doldurulduğunda başvuru bilgileri doğrudan iletilir ve erişim davetiyesi e-posta yoluyla gönderilir.
+
+### Hangi platformlar destekleniyor?
+Şu anda YouTube, Reddit, GitHub, X (Twitter) ve Medium desteklenmektedir. Beta sürecinde yeni platformlar eklenmeye devam edecektir.
+
+### Ücretli mi olacak?
+Beta döneminde tamamen ücretsizdir. Lansman sonrasında da temel özellikler kalıcı olarak ücretsiz kalacaktır.
+
+### Verilerim güvende mi?
+Evet. Kullanıcı verileri asla satılmaz ve reklam amaçlı profil çıkarılmaz. Gizlilik projenin en temel ilkesidir.
+
+## Ayrıntılı Dokümantasyon (Detailed LLM Documentation)
+- [Ayrıntılı AI / LLM Bağlamı](https://korayozkan.github.io/NewRssFeedbeta/llms-full.txt): Mimari, UX kuralları ve teknik detaylar.

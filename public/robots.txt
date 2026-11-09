@@ -40,5 +40,9 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-# Sitemap konumu
+# Sitemap & LLM Konumu
 Sitemap: https://korayozkan.github.io/NewRssFeedbeta/sitemap.xml
+
+# LLM / AI Okuma Standardı (llmstxt.org)
+# https://korayozkan.github.io/NewRssFeedbeta/llms.txt
+# https://korayozkan.github.io/NewRssFeedbeta/llms-full.txt

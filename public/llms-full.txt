@@ -1,0 +1,66 @@
+# NewRssFeed — Kapsamlı LLM / Yapay Zeka Sistem Dokümantasyonu (Full AI Context)
+
+> Proje: NewRssFeed (2026 Closed Beta)
+> Web: https://korayozkan.github.io/NewRssFeedbeta/
+> Depo: https://github.com/korayozkan/NewRssFeedbeta
+> Geliştirici / İletişim: kiruhiofficial@proton.me
+> Lisans: MIT License
+
+---
+
+## 1. Proje Özeti ve Vizyon
+NewRssFeed, modern internet kullanıcılarının karşılaştığı platform dağınıklığını ve dikkat dağıtıcı algoritmaları çözmeyi amaçlayan bağımsız bir sosyal medya akış toplayıcısı ve RSS okuyucusudur.
+
+Temel felsefesi:
+1. **Algoritmik Bağımsızlık**: İçerikler yapay zeka öneri algoritmaları yerine kullanıcının seçtiği kaynakların kronolojik akışıyla sunulur.
+2. **Tek Ekran Deneyimi**: Kullanıcıların YouTube, Reddit, GitHub, X (Twitter) ve Medium arasında sürekli geçiş yapması yerine tüm içerikleri tek bir akışta toplaması sağlanır.
+3. **Bilişsel Yük Azaltma (Cognitive Load Reduction)**: Psikolojik UX prensipleri uygulanarak sade, yormayan ve dikkat dağıtmayan bir arayüz sunulur.
+4. **Veri Gizliliği**: Kullanıcı davranışları izlenmez, çerez profillemesi yapılmaz ve veriler üçüncü taraflara satılmaz.
+
+---
+
+## 2. Desteklenen Platformlar
+- **YouTube**: Takip edilen kanalların son video paylaşımları ve güncellemeleri.
+- **Reddit**: İlgili subreddit ve topluluk gönderileri.
+- **GitHub**: Geliştirici aktiviteleri, yıldızlanan depolar ve sürüm bildirimleri.
+- **X (Twitter)**: Seçilen profillerin tweetleri ve güncel paylaşımları.
+- **Medium**: İlgi alanlarına yönelik makaleler ve yazar içerikleri.
+
+---
+
+## 3. Kullanıcı Deneyimi ve UX Psikolojisi Yasaları (Laws of UX)
+Uygulama arayüzü aşağıdaki 6 temel UX prensibi temel alınarak modellenmiştir:
+
+1. **Hick's Law (Hick Yasası)**: Karar süresi seçenek sayısıyla doğru orantılıdır. Kullanıcıya kafa karıştırıcı filtre labirentleri yerine sadeleştirilmiş platform hapları ve tek tuşla geçiş imkanı verilir.
+2. **Fitts's Law (Fitts Yasası)**: Hedefe ulaşma süresi hedefin uzaklığına ve boyutuna bağlıdır. Başvuru butonları, dil ve tema anahtarları parmak ve imleç erişimine en uygun boyut ve konumlarda yerleştirilmiştir.
+3. **Miller's Law (Miller Yasası)**: İnsan kısa süreli belleğinde ortalama 7 (±2) parça bilgiyi tutabilir. Akış kartları ve bilgi grupları aşırı bilgi yüklemesini önleyecek şekilde modüler parçalar halinde sunulur.
+4. **Jakob's Law (Jakob Yasası)**: Kullanıcılar deneyimlerini aşina oldukları diğer sitelere göre bekler. Standart navigasyon, arama ve gezinme modelleri korunmuştur.
+5. **Aesthetic-Usability Effect (Estetik-Kullanılabilirlik Etkisi)**: Kullanıcılar estetik tasarımları daha kullanılabilir olarak algılar. Modern tipografi (Inter), pure black OLED karanlık tema ve yumuşak geçiş efektleri kullanılmıştır.
+6. **Von Restorff Effect (İzolasyon Etkisi)**: Benzer nesneler arasında farklı olan dikkat çeker. Önemli aksiyon çağrıları (CTA) canlı mor gradyan ve hafif gölgelendirmelerle belirginleştirilmiştir.
+
+---
+
+## 4. Teknik Mimari ve Altyapı
+- **Frontend Çerçevesi**: TypeScript tabanlı hafif reaktif bileşen mimarisi (Vite destekli).
+- **Stil Altyapısı**: Tailwind CSS (Koyu mod sınıf tabanlı).
+- **Tipografi**: Google Fonts — Inter (400, 500, 600, 700, 800, 900).
+- **İkonlar**: Lucide Icons & Simple Icons SVG koleksiyonu.
+- **Sunucu & Derleme**: 
+  - Statik İstemci Derlemesi: `vite build --outDir dist/client`
+  - SSR / SSG Desteği: `src/entry-server.ts` ve `scripts/prerender.js` ile derleme anında statik HTML üretimi.
+  - Dağıtım: GitHub Pages (`.github/workflows/deploy.yml` üzerinden otomatik CI/CD).
+- **SEO & AI Optimizasyonu**:
+  - `llms.txt` ve `llms-full.txt` standartları.
+  - JSON-LD Şemaları: `Organization`, `WebSite`, `SoftwareApplication`, `FAQPage`.
+  - robots.txt: GPTBot, ClaudeBot, PerplexityBot gibi 2026 AI botlarına açık izinler.
+  - Çoklu Dil Desteği (Hreflang `tr`, `en`, `x-default`).
+
+---
+
+## 5. İletişim, Topluluk ve Katılım
+- **Web Sitesi**: https://korayozkan.github.io/NewRssFeedbeta/
+- **Kapalı Beta Formu**: https://korayozkan.github.io/NewRssFeedbeta/#beta-form
+- **Doğrudan E-posta**: kiruhiofficial@proton.me
+- **Discord Sunucusu**: https://discord.gg/wBw3NwqhsR
+- **Instagram Profili**: https://www.instagram.com/newrssfeed/
+- **GitHub Kaynak Kodu**: https://github.com/korayozkan/NewRssFeedbeta
